@@ -5,10 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainCard = document.getElementById('main-card');
     const successCard = document.getElementById('success-card');
     const heartsContainer = document.getElementById('hearts-container');
-    const celebration = document.getElementById('celebration');
     const cherryBlossoms = document.getElementById('cherry-blossoms');
     const nervousCat = document.querySelector('.nervous-cat');
-    const floatingHeartsContainer = document.getElementById('floating-hearts-container');
     const darkmodeToggle = document.getElementById('darkmode-toggle');
 
     let selectedLocations = [];
@@ -32,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Location selection elements
     const chooseLocationBtn = document.getElementById('choose-location-btn');
     const locationCard = document.getElementById('location-card');
-    const locationButtons = document.querySelectorAll('.location-btn');
     const selectedLocationMessage = document.getElementById('selected-location-message');
     const locationCelebration = document.getElementById('location-celebration');
     const confirmLocationBtn = document.getElementById('confirm-location-btn');
@@ -48,15 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Food selection elements
     const foodNextBtn = document.getElementById('food-next-btn');
     const foodCard = document.getElementById('food-card');
-    const foodButtons = document.querySelectorAll('.food-btn');
     const selectedFoodMessage = document.getElementById('selected-food-message');
     const foodCelebration = document.getElementById('food-celebration');
     const confirmFoodBtn = document.getElementById('confirm-food-btn');
-    const customFoodContainer = document.getElementById('custom-food-container');
-    const customFoodInput = document.getElementById('custom-food-input');
-    const addCustomFoodBtn = document.getElementById('add-custom-food');
     const finalMessage = document.getElementById('final-message');
-    const finalMessageElement = document.getElementById('final-message');
     const drinksNextBtn = document.getElementById('drinks-next-btn');
 
     // Drinks selection elements
@@ -69,8 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Completion page elements
     const completionCard = document.getElementById('completion-card');
-    const completionNextBtn = document.getElementById('completion-next-btn');
-    const completionHearts = document.getElementById('completion-hearts');
 
     // Email form elements
     const emailForm = document.getElementById('email-form');
@@ -281,29 +271,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500);
         });
     }
-
-    locationButtons.forEach(button => {
-        button.classList.remove('selected');
-        button.addEventListener('click', function() {
-            this.classList.toggle('selected');
-            if (this.classList.contains('selected')) {
-                selectedLocations.push(this.dataset.location);
-                createHeartBurst(this, 15);
-            } else {
-                selectedLocations = selectedLocations.filter(location => location !== this.dataset.location);
-            }
-            if (selectedLocations.length > 0) {
-                selectedLocationMessage.classList.remove('hidden');
-                selectedLocationMessage.classList.add('show');
-                confirmLocationBtn.style.display = 'inline-block';
-                createButtonHeartEffect(confirmLocationBtn);
-            } else {
-                selectedLocationMessage.classList.remove('show');
-                selectedLocationMessage.classList.add('hidden');
-                confirmLocationBtn.style.display = 'none';
-            }
-        });
-    });
 
     function createHeartBurst(element, count) {
         const rect = element.getBoundingClientRect();
@@ -847,12 +814,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 btn.style.opacity = '0.7';
                 btn.style.cursor = 'default';
             });
-            if (customFoodInput) {
-                customFoodInput.disabled = true;
-                addCustomFoodBtn.disabled = true;
-                customFoodInput.style.opacity = '0.7';
-                addCustomFoodBtn.style.opacity = '0.7';
-            }
         }
     });
 
