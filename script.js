@@ -932,6 +932,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Email validation and sending
     if (emailForm) {
+        const formatSelection = (items) => {
+            const cleaned = items
+                .map(item => item.replace(/^custom:\s*/i, '').replace(/\s+/g, ' ').trim())
+                .filter(Boolean);
+            return cleaned.length ? cleaned.join(', ') : 'None selected';
+        };
+
         emailForm.addEventListener('submit', function(event) {
             event.preventDefault();
             
@@ -952,9 +959,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const templateParams = {
                 to_email: email,
                 date_options: appState.dateOptions.map(opt => `${opt.date} at ${opt.time}`).join(', '),
-                locations: appState.selectedLocations.join(', '),
-                food_preferences: appState.selectedFoods.join(', '),
-                drink_preferences: appState.selectedDrinks.join(', '),
+                locations: formatSelection(appState.selectedLocations),
+                food_preferences: formatSelection(appState.selectedFoods),
+                drink_preferences: formatSelection(appState.selectedDrinks),
                 user_note: appState.userNote
             };
             
