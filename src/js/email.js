@@ -1,0 +1,83 @@
+import { appState, formatSelection } from './state.js';
+import { createHeart } from './effects.js';
+
+const disableForm = (els) => {
+    els.emailForm?.classList.add('disabled');
+    if (els.emailSuccess) els.emailSuccess.style.display = 'block';
+    if (els.userEmailInput) els.userEmailInput.disabled = true;
+    if (els.sendEmailBtn) els.sendEmailBtn.disabled = true;
+};
+
+const initEmailForm = (els) => {
+    if (!els.emailForm || !els.userEmailInput) return;
+
+    const markAsSent = () => {
+        disableForm(els);
+        for (let i = 0; i < 20; i++) {
+            setTimeout(() => createHeart(els.completionHearts), i * 100);
+        }
+    };
+
+    els.emailForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const email = els.userEmailInput.value.trim();
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailPattern.test(email)) {
+            if (els.emailError) {
+                els.emailError.style.display = 'block';
+            }
+            els.userEmailInput.focus();
+            return;
+        }
+
+        if (els.emailError) els.emailError.style.display = 'none';
+        if (els.sendEmailBtn) {
+            els.sendEmailBtn.textContent = 'Sending...';
+            els.sendEmailBtn.disabled = true;
+        }
+
+        const templateParams = {
+            to_email: email,
+            date_options: appState.dateOptions.map(opt => `${opt.date} at ${opt.time}`).join(', '),
+            locations: formatSelection(appState.selectedLocations),
+            food_preferences: formatSelection(appState.selectedFoods),
+            drink_preferences: formatSelection(appState.selectedDrinks),
+            user_note: appState.userNote
+        };
+
+        emailjs.send('will-you-date-me', 'will-you-date-me-form', templateParams)
+            .then(() => {
+                if (els.sendEmailBtn) els.sendEmailBtn.textContent = 'Send Invitation';
+                if (els.sendEmailBtn) els.sendEmailBtn.disabled = false;
+                if (els.emailSuccess) els.emailSuccess.style.display = 'block';
+                appState.invitationEmailSent = true;
+                markAsSent();
+            })
+            .catch(() => {
+                if (els.sendEmailBtn) {
+                    els.sendEmailBtn.textContent = 'Try Again';
+                    els.sendEmailBtn.disabled = false;
+                }
+                if (els.emailError) {
+                    els.emailError.textContent = 'Failed to send invitation. Please try again.';
+                    els.emailError.style.display = 'block';
+                }
+            });
+    });
+
+    els.userEmailInput.addEventListener('input', () => {
+        const email = els.userEmailInput.value.trim();
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (email && !emailPattern.test(email)) {
+            if (els.emailError) els.emailError.style.display = 'block';
+        } else if (els.emailError) {
+            els.emailError.style.display = 'none';
+        }
+    });
+
+    if (appState.invitationEmailSent) {
+        disableForm(els);
+    }
+};
+
+export { initEmailForm };
