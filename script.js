@@ -11,14 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const floatingHeartsContainer = document.getElementById('floating-hearts-container');
     const darkmodeToggle = document.getElementById('darkmode-toggle');
 
-    // Missing variable declarations - adding these fixes the continue buttons
     let selectedLocations = [];
     let selectedFoods = [];
     let selectedDrinks = [];
 
-    // In-memory state variables
     const appState = {
-        darkMode: window.matchMedia('(prefers-color-scheme: dark)').matches,
+        darkMode: false,
         selectedLocations: [],
         dateOptions: [],
         selectedFoods: [],
@@ -87,24 +85,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const noteWordCounter = noteCard ? noteCard.querySelector('.word-counter') : null;
     const saveNoteBtn = document.getElementById('save-note-btn');
 
-    // Dark mode toggle
+    // Dark mode: default to light; user may toggle manually (no persistence)
+    const initialDarkMode = false;
+    appState.darkMode = initialDarkMode;
+
+    // Clean up any root-level dark-mode class that conflicts with body-based styling
+    document.documentElement.classList.remove('dark-mode');
+    document.body.classList.toggle('dark-mode', initialDarkMode);
+
     if (darkmodeToggle) {
-        // Initialize based on system preference
-        if (appState.darkMode) {
-            document.body.classList.add('dark-mode');
-            darkmodeToggle.checked = true;
-        }
+        darkmodeToggle.checked = initialDarkMode;
 
         darkmodeToggle.addEventListener('change', function() {
-            document.body.classList.toggle('dark-mode', this.checked);
-            appState.darkMode = this.checked;
-        });
-
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-            const systemPrefersDark = e.matches;
-            document.body.classList.toggle('dark-mode', systemPrefersDark);
-            darkmodeToggle.checked = systemPrefersDark;
-            appState.darkMode = systemPrefersDark;
+            const isDark = this.checked;
+            document.body.classList.toggle('dark-mode', isDark);
+            appState.darkMode = isDark;
         });
     } else {
         console.warn('Dark mode toggle element not found');
