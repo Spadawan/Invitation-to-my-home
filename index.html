@@ -48,6 +48,30 @@
             </svg>
         </label>
     </div>
+
+    <div class="music-widget" id="music-widget">
+        <button class="music-toggle" id="music-toggle" aria-label="Music controls">
+            <img src="assets/images/music.svg" alt="Music note icon" class="music-icon">
+        </button>
+        <div class="music-panel" id="music-panel">
+            <div class="music-panel-header">
+                <span class="panel-title">Background music</span>
+            </div>
+            <div class="music-controls-row">
+                <button class="music-play-btn" id="music-play-toggle" aria-label="Play or pause background music">
+                    <span class="play-icon">▶</span>
+                    <span class="pause-icon">❚❚</span>
+                    <span class="play-text">Play</span>
+                    <span class="pause-text">Pause</span>
+                </button>
+                <div class="music-volume-group">
+                    <button class="volume-btn" id="music-volume-down" aria-label="Lower volume">-</button>
+                    <span class="volume-value" id="music-volume-value">45%</span>
+                    <button class="volume-btn" id="music-volume-up" aria-label="Increase volume">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <div class="container">
         <div class="card" id="main-card">
@@ -457,8 +481,8 @@
         <div class="perpetual-hearts" id="perpetual-hearts"></div>
     </div>
 
-    <audio id="bg-music" loop>
-        <source src="music/Perfect_Ed-Sheeran.mp3" type="audio/mpeg">
+    <audio id="bg-music" loop preload="auto">
+        <source src="assets/music/Perfect_Ed-Sheeran.mp3" type="audio/mpeg">
     </audio>
 
     <script type="module" src="src/js/main.js"></script>

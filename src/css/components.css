@@ -258,6 +258,184 @@ body:hover .scrollbar-decoration {
     opacity: 1;
 }
 
+.music-widget {
+    position: fixed;
+    right: 18px;
+    bottom: 20px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    z-index: 1200;
+    pointer-events: auto;
+    isolation: isolate;
+}
+
+.music-toggle {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 2px solid #f5c7d6;
+    background: #ffe8f0;
+    color: #ff6b95;
+    display: grid;
+    place-items: center;
+    /* box-shadow: 0 8px 18px rgba(255, 107, 149, 0.25); */
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.music-toggle:hover,
+.music-widget.open .music-toggle {
+    transform: translateY(-1px) scale(1.02);
+    /* box-shadow: 0 12px 24px rgba(255, 107, 149, 0.28); */
+    filter: saturate(1.02);
+}
+
+.music-icon {
+    width: 22px;
+    height: 22px;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+}
+
+.music-panel {
+    position: absolute;
+    right: 0;
+    bottom: 56px;
+    padding: 10px 12px;
+    width: 210px;
+    max-width: 230px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1.5px solid rgba(255, 107, 149, 0.18);
+    /* box-shadow: 0 16px 32px rgba(255, 107, 149, 0.2), 0 8px 18px rgba(0, 0, 0, 0.05); */
+    backdrop-filter: blur(7px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(4px) scale(0.98);
+    transition: opacity 0.18s ease, transform 0.22s ease;
+}
+
+.music-panel::before { display: none; }
+
+.music-widget:hover .music-panel,
+.music-widget.open .music-panel {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+.music-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.music-panel .panel-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: #ff4f85;
+    text-transform: uppercase;
+}
+
+.music-controls-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.music-play-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 12px;
+    border: 1.5px solid #ff6b95;
+    background: #ff6b95;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    /* box-shadow: 0 8px 16px rgba(255, 107, 149, 0.12); */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.music-play-btn:hover {
+    transform: translateY(-1px);
+    /* box-shadow: 0 12px 24px rgba(255, 107, 149, 0.18); */
+}
+
+.music-play-btn .pause-icon,
+.music-play-btn .pause-text {
+    display: none;
+}
+
+.music-play-btn.is-playing {
+    background: #fff4f7;
+    color: #ff5c8f;
+    border-color: rgba(255, 107, 149, 0.35);
+    /* box-shadow: 0 10px 22px rgba(255, 107, 149, 0.18); */
+}
+
+.music-play-btn.is-playing .play-icon,
+.music-play-btn.is-playing .play-text {
+    display: none;
+}
+
+.music-play-btn.is-playing .pause-icon,
+.music-play-btn.is-playing .pause-text {
+    display: inline;
+}
+
+.music-volume-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+}
+
+.volume-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background: #ff6b95;
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+    /* box-shadow: 0 8px 16px rgba(255, 107, 149, 0.24); */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.volume-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.02);
+    /* box-shadow: 0 12px 22px rgba(255, 107, 149, 0.28); */
+}
+
+.volume-value {
+    min-width: 48px;
+    text-align: center;
+    font-weight: 700;
+    color: #ff5c8f;
+    letter-spacing: 0.2px;
+}
+
+.music-widget.needs-interaction .music-toggle {
+    animation: music-nudge 0.6s ease;
+}
+
+@keyframes music-nudge {
+    0% { transform: translateY(0) scale(1); }
+    30% { transform: translateY(-2px) scale(1.03); }
+    60% { transform: translateY(1px) scale(0.99); }
+    100% { transform: translateY(0) scale(1); }
+}
+
 .scrollbar-heart {
     position: absolute;
     width: 12px;

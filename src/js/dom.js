@@ -49,7 +49,14 @@ const elements = {
     datetimeCelebration: document.getElementById('datetime-celebration'),
     foodSelectionStatus: document.getElementById('food-selection-status'),
     drinkSelectionStatus: document.getElementById('drink-selection-status'),
-    bgMusic: document.getElementById('bg-music')
+    bgMusic: document.getElementById('bg-music'),
+    musicWidget: document.getElementById('music-widget'),
+    musicToggle: document.getElementById('music-toggle'),
+    musicPanel: document.getElementById('music-panel'),
+    musicPlayToggle: document.getElementById('music-play-toggle'),
+    musicVolumeDown: document.getElementById('music-volume-down'),
+    musicVolumeUp: document.getElementById('music-volume-up'),
+    musicVolumeValue: document.getElementById('music-volume-value')
 };
 
 const tileButtons = () => document.querySelectorAll('.tile-btn');

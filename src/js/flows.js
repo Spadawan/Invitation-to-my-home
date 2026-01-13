@@ -1,6 +1,9 @@
 import { appState, selection, syncSelections } from './state.js';
 import { createButtonHeartEffect, createHeart, createHeartBurst, sprinkleHearts } from './effects.js';
 
+const DEFAULT_MUSIC_VOLUME = 0.5;
+const VOLUME_STEP = 0.05;
+
 const fadeSwapCards = (current, next, onShown) => {
     if (!current || !next) return;
     current.style.transform = 'scale(0.8)';
@@ -15,6 +18,94 @@ const fadeSwapCards = (current, next, onShown) => {
             onShown?.();
         }, 50);
     }, 500);
+};
+
+const setupMusicControls = (els) => {
+    const {
+        bgMusic,
+        musicWidget,
+        musicToggle,
+        musicPlayToggle,
+        musicVolumeDown,
+        musicVolumeUp,
+        musicVolumeValue
+    } = els;
+
+    if (!bgMusic || !musicWidget || !musicToggle || !musicVolumeValue) return;
+
+    const clampVolume = (value) => Math.min(1, Math.max(0, value));
+
+    const updateVolumeLabel = () => {
+        const vol = clampVolume(bgMusic.volume);
+        musicVolumeValue.textContent = `${Math.round(vol * 100)}%`;
+    };
+
+    const setVolume = (value) => {
+        const vol = clampVolume(value);
+        bgMusic.volume = vol;
+        bgMusic.dataset.userVolume = String(vol);
+        updateVolumeLabel();
+    };
+
+    setVolume(DEFAULT_MUSIC_VOLUME);
+
+    const syncPlayState = () => {
+        if (!musicPlayToggle) return;
+        const isPlaying = !bgMusic.paused;
+        musicPlayToggle.classList.toggle('is-playing', isPlaying);
+    };
+
+    const requestPlay = () => {
+        bgMusic.play()
+            .then(syncPlayState)
+            .catch(() => {
+                musicWidget.classList.add('needs-interaction');
+                setTimeout(() => musicWidget.classList.remove('needs-interaction'), 800);
+            });
+    };
+
+    musicPlayToggle?.addEventListener('click', (event) => {
+        event.stopPropagation();
+        if (bgMusic.paused) {
+            requestPlay();
+        } else {
+            bgMusic.pause();
+            syncPlayState();
+        }
+    });
+
+    const adjustVolume = (delta) => setVolume(bgMusic.volume + delta);
+
+    musicVolumeDown?.addEventListener('click', (event) => {
+        event.stopPropagation();
+        adjustVolume(-VOLUME_STEP);
+    });
+
+    musicVolumeUp?.addEventListener('click', (event) => {
+        event.stopPropagation();
+        adjustVolume(VOLUME_STEP);
+    });
+
+    musicToggle.addEventListener('click', (event) => {
+        event.stopPropagation();
+        musicWidget.classList.toggle('open');
+        if (bgMusic.paused) {
+            requestPlay();
+        }
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!musicWidget.contains(event.target)) {
+            musicWidget.classList.remove('open');
+        }
+    });
+
+    bgMusic.addEventListener('volumechange', updateVolumeLabel);
+    bgMusic.addEventListener('play', syncPlayState);
+    bgMusic.addEventListener('pause', syncPlayState);
+
+    updateVolumeLabel();
+    syncPlayState();
 };
 
 const setupYesNoFlow = (els) => {
@@ -67,7 +158,9 @@ const setupYesNoFlow = (els) => {
             }
 
             if (els.bgMusic) {
-                els.bgMusic.volume = 0.7;
+                if (!Number.isFinite(els.bgMusic.volume)) {
+                    els.bgMusic.volume = DEFAULT_MUSIC_VOLUME;
+                }
                 els.bgMusic.play().catch(() => {
                     console.log('Auto-play was prevented. Please interact with the document first.');
                 });
@@ -559,6 +652,7 @@ const setupNoteFlow = (els, onCompletionReady) => {
 };
 
 const initFlows = (els, { tileButtons, customButtons }, onCompletionReady) => {
+    setupMusicControls(els);
     setupYesNoFlow(els);
     setupSelections(els, tileButtons, customButtons);
     setupLocationNavigation(els);
