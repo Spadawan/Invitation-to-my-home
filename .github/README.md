@@ -2,10 +2,6 @@
 
 A cheeky, single-page date-invitation flow packed with drifting blossoms, jittery buttons, and way too many hearts. Built for browsers, not bravery; bravery is on you.
 
-<div align="center">
-    <img src="assets/preview.jpg" alt="Screenshot of the Will You Date Me app showing the invitation flow with hearts and cherry blossoms.">
-</div>
-
 [](assets/preview.jpg)
 
 ## What this does
