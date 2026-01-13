@@ -1,0 +1,168 @@
+.hearts-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hearts-celebration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--heart-icon) no-repeat;
+    background-size: contain;
+    opacity: 0;
+    animation: float 6s ease-in-out infinite;
+}
+
+.cat-animation {
+    position: relative;
+}
+
+.cute-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    position: relative;
+}
+
+.cat-svg {
+    width: 200px;
+    height: auto;
+    filter: drop-shadow(0 5px 10px rgba(255, 107, 149, 0.3));
+    animation: bounce 3s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
+}
+
+.cat-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.cat-heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--heart-icon) no-repeat;
+    background-size: contain;
+    opacity: 0.8;
+    animation: catHeartFloat 4s ease-in-out infinite;
+}
+
+.ch1 { top: -15px; left: 50px; animation-delay: 0s; }
+.ch2 { top: 30px; right: 60px; animation-delay: 1.2s; }
+.ch3 { bottom: 10px; left: 60px; animation-delay: 0.6s; }
+.ch4 { top: 10px; right: 40px; transform: scale(0.7); animation-delay: 2s; }
+
+.cherry-blossoms {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.blossom {
+    position: absolute;
+    background-image: var(--blossom-icon);
+    background-size: contain;
+    pointer-events: none;
+}
+
+.cute-arrow-pointer {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    z-index: 20;
+    animation: floatArrow 3s ease-in-out infinite;
+}
+
+#yes-arrow { right: 30px; top: 58%; }
+#success-arrow { right: -90px; bottom: 10px; transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
+
+.arrow-circle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fff5f8, #ffecf0);
+    border: 2px solid #ff8bb3;
+    box-shadow: 0 4px 10px rgba(255, 139, 179, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-arrow { transform: rotate(0deg) !important; }
+.right-arrow .arrow-shaft { width: 30px; height: 5px; left: 10px; }
+.right-arrow .arrow-head { right: 10px; }
+
+.arrow-shaft {
+    position: absolute;
+    width: 30px;
+    height: 5px;
+    background-color: #ff6b95;
+    border-radius: 4px;
+}
+
+.arrow-head {
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #ff6b95;
+}
+
+.floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.floating-heart {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: var(--heart-icon) no-repeat;
+    background-size: contain;
+    opacity: 0.8;
+    animation: floatHeartUp 4s ease-in-out infinite;
+}
+
+.h1 { top: -10px; left: 10px; animation: floatHeartUp 4s ease-in-out infinite; animation-delay: 0s; }
+.h2 { top: 10px; left: -5px; transform: scale(0.7); animation: floatHeartUp 4s ease-in-out infinite; animation-delay: 1s; }
+.h3 { top: 5px; left: 40px; transform: scale(0.6); animation: floatHeartUp 4s ease-in-out infinite; animation-delay: 2s; }
+
+.nervous-cat {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    transform: scale(0.7);
+    pointer-events: none;
+    animation: nervousShake 0.3s infinite;
+}

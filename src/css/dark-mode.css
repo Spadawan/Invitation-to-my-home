@@ -1,0 +1,144 @@
+.dark-mode .gorgeous {
+    background: linear-gradient(45deg, #ff8bb3, #ffacc7, #ff8bb3);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0 0 5px rgba(255, 139, 179, 0.3);
+}
+
+.dark-mode .cat-svg g {
+    fill: #ff8bb3;
+}
+
+.dark-mode .next-step p {
+    color: #bbb;
+}
+
+.dark-mode .date-input label,
+.dark-mode .time-input label {
+    color: #ff8bb3;
+}
+
+.dark-mode .date-input input,
+.dark-mode .time-input input {
+    background: #1e1e1e;
+    border-color: rgba(255, 107, 149, 0.3);
+    color: #e6e6e6;
+}
+
+.dark-mode .btn-icon {
+    color: #ff8bb3;
+}
+
+.dark-mode .btn-icon:hover {
+    background: rgba(255, 139, 179, 0.2);
+}
+
+.dark-mode .add-btn {
+    color: #ff8bb3;
+}
+
+.dark-mode .add-btn:hover {
+    background: rgba(255, 139, 179, 0.2);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb,
+.dark-mode * ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ff8bb3, #ff6b95);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover,
+.dark-mode * ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #ff6b95, #ff8bb3);
+    box-shadow: 0 0 12px rgba(255, 139, 179, 0.5);
+}
+
+.dark-mode .location-counter {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .local-storage-info {
+    background: rgba(255, 139, 179, 0.9);
+}
+
+.dark-mode .clear-data-btn {
+    color: #ff8bb3;
+    border-color: rgba(255, 139, 179, 0.5);
+}
+
+.dark-mode .clear-data-btn:hover {
+    background: rgba(255, 139, 179, 0.15);
+    box-shadow: 0 4px 8px rgba(255, 139, 179, 0.3);
+}
+
+.dark-mode .clear-data-confirmation {
+    background: rgba(76, 175, 80, 0.2);
+    color: #8BC34A;
+}
+
+.dark-mode .custom-btn {
+    background-color: #2a2329;
+    color: #e6e6e6;
+    border-color: #3d323a;
+}
+
+.dark-mode .custom-btn:hover {
+    background-color: #332830;
+}
+
+.dark-mode .custom-btn.selected {
+    background-color: #3c2a33;
+    border-color: #ff6b95;
+    box-shadow: 0 4px 12px rgba(255, 107, 149, 0.15);
+    animation: selected-pulse-dark 1.5s infinite;
+}
+
+.dark-mode .custom-text-input {
+    background: #1e1e1e;
+    border-color: rgba(255, 107, 149, 0.3);
+    color: #e6e6e6;
+}
+
+.dark-mode .word-counter {
+    color: #aaa;
+}
+
+.dark-mode #note-textarea {
+    background: #1e1e1e;
+    border-color: rgba(255, 107, 149, 0.3);
+    color: #e6e6e6;
+}
+
+.dark-mode .email-container {
+    background: rgba(255, 139, 179, 0.1);
+}
+
+.dark-mode .email-label {
+    color: #bbb;
+}
+
+.dark-mode #user-email {
+    background: #1e1e1e;
+    border-color: rgba(255, 107, 149, 0.3);
+    color: #e6e6e6;
+}
+
+.dark-mode .email-success {
+    background: rgba(76, 175, 80, 0.2);
+    color: #8BC34A;
+}
+
+.dark-mode .food-selection-status.active {
+    background: rgba(255, 139, 179, 0.15);
+    color: #ff8bb3;
+}
+
+.dark-mode .drink-selection-status.active {
+    background: rgba(139, 164, 255, 0.15);
+    color: #8b93ff;
+}
+
+.dark-mode .tile-btn.selected {
+    border-color: #ff8bb3;
+    box-shadow: 0 0 15px rgba(255, 139, 179, 0.5);
+}

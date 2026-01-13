@@ -1,0 +1,165 @@
+:root {
+    --font-family: 'Quicksand', sans-serif;
+    --bg-color: #f8e9ec;
+    --bg-gradient: linear-gradient(45deg, #f8e9ec 0%, #ffdee5 100%);
+    --text-color: #555;
+    --card-bg: #ffffff;
+    --card-border: rgba(255, 182, 193, 0.3);
+    --card-shadow: 0 15px 35px rgba(255, 138, 188, 0.2);
+    --heading-color: #ff6b95;
+    --special-color: #ff4d88;
+    --message-color: #ff6b95;
+    --divider-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="10" viewBox="0 0 100 10"><path d="M 0,5 C 20,-5 30,15 50,5 C 70,-5 80,15 100,5" stroke="%23ffb6c1" stroke-width="2" fill="none" /></svg>') repeat-x;
+    --blossom-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20 0C18 10 10 18 0 20C10 22 18 30 20 40C22 30 30 22 40 20C30 18 22 10 20 0Z" fill="%23ffb6c1" opacity="0.7"/></svg>');
+    --heart-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff6b95"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+}
+
+body.dark-mode {
+    --bg-color: #2d2123;
+    --bg-gradient: linear-gradient(45deg, #2d2123 0%, #20181a 100%);
+    --text-color: #d0d0d0;
+    --card-bg: #121212;
+    --card-border: rgba(255, 107, 149, 0.3);
+    --card-shadow: 0 15px 35px rgba(255, 107, 149, 0.15);
+    --heading-color: #ff8bb3;
+    --special-color: #ff8bb3;
+    --message-color: #ff8bb3;
+    --divider-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="10" viewBox="0 0 100 10"><path d="M 0,5 C 20,-5 30,15 50,5 C 70,-5 80,15 100,5" stroke="%23ff8bb3" stroke-width="2" fill="none" /></svg>') repeat-x;
+    --blossom-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20 0C18 10 10 18 0 20C10 22 18 30 20 40C22 30 30 22 40 20C30 18 22 10 20 0Z" fill="%23ff8bb3" opacity="0.7"/></svg>');
+    --heart-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff8bb3"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: background-color 0.5s ease-out, color 0.5s ease-out;
+    color: var(--text-color);
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    z-index: 10;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 25px;
+    box-shadow: var(--card-shadow);
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    border: 2px solid var(--card-border);
+}
+
+.card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #ffb6c1, #ffc8dd, #ffb6c1);
+    border-radius: 5px 5px 0 0;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    color: var(--heading-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 2.2rem;
+    text-shadow: 1px 1px 2px rgba(255, 107, 149, 0.1);
+}
+
+.special-text {
+    color: var(--special-color);
+    font-weight: 700;
+    position: relative;
+}
+
+.special-text:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #ffc8dd, #ff6b95);
+    border-radius: 2px;
+}
+
+.gorgeous {
+    background: linear-gradient(45deg, #ff6b95, #ff8bb3, #ff6b95);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 2s linear infinite;
+    text-shadow: 0 0 5px rgba(255, 107, 149, 0.3);
+    letter-spacing: 0.5px;
+}
+
+.sakura-divider {
+    height: 15px;
+    margin: 15px auto;
+    width: 80%;
+    background: var(--divider-icon);
+    background-size: 100px 10px;
+    opacity: 0.7;
+}
+
+.question {
+    font-size: 26px;
+    margin-bottom: 40px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.message {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: var(--message-color);
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.big-message {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--message-color);
+    margin: 15px 0;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.toast {
+    display: none;
+}
