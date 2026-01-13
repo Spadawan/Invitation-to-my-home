@@ -11,12 +11,6 @@ A cheeky, single-page date-invitation flow packed with drifting blossoms, jitter
 - Sends a tidy invitation email via EmailJS with the chosen times, locations, food, drinks, and note.
 - Light/dark toggle plus cherry blossom and cursor heart effects for maximum romantic energy.
 
-## Tech Stack
-
-- HTML, CSS, JS
-- Flatpickr for date/time inputs
-- EmailJS Browser SDK for the invitation email
-
 ## Quickstart
 
 1. Clone or download this repo.
