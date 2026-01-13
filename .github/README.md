@@ -9,7 +9,7 @@ A cheeky, single-page date-invitation flow packed with drifting blossoms, jitter
 - Lets you add custom options with word counters and gentle validations instead of modal rage.
 - Plays background music with play/pause and volume controls; heart particles float everywhere because restraint was not a design goal.
 - Sends a tidy invitation email via EmailJS with the chosen times, locations, food, drinks, and note.
-- Light/dark toggle plus cherry blossom and cursor heart effects for maximum rom-com energy.
+- Light/dark toggle plus cherry blossom and cursor heart effects for maximum romantic energy.
 
 ## Tech Stack
 
