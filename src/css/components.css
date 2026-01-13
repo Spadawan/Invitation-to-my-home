@@ -262,12 +262,19 @@ body:hover .scrollbar-decoration {
     position: fixed;
     right: 18px;
     bottom: 20px;
-    display: flex;
+    display: none;
     align-items: flex-end;
     gap: 8px;
     z-index: 1200;
     pointer-events: auto;
     isolation: isolate;
+}
+
+.music-widget.visible {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .music-toggle {
@@ -302,8 +309,8 @@ body:hover .scrollbar-decoration {
     right: 0;
     bottom: 56px;
     padding: 10px 12px;
-    width: 210px;
-    max-width: 230px;
+    width: 225px;
+    max-width: 250px;
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.94);
     border: 1.5px solid rgba(255, 107, 149, 0.18);
@@ -317,19 +324,42 @@ body:hover .scrollbar-decoration {
 
 .music-panel::before { display: none; }
 
-.music-widget:hover .music-panel,
 .music-widget.open .music-panel {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0) scale(1);
 }
 
+.music-tooltip {
+    position: absolute;
+    right: 52px;
+    bottom: 12px;
+    background: rgba(0, 0, 0, 0.72);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+}
+
+.music-toggle:hover + .music-tooltip,
+.music-widget:focus-within .music-tooltip {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .music-panel-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 8px;
     margin-bottom: 8px;
+    text-align: center;
 }
 
 .music-panel .panel-title {
@@ -338,16 +368,19 @@ body:hover .scrollbar-decoration {
     letter-spacing: 0.2px;
     color: #ff4f85;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .music-controls-row {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: nowrap;
 }
 
 .music-play-btn {
-    flex: 1;
+    flex: 0 0 auto;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -394,18 +427,19 @@ body:hover .scrollbar-decoration {
 .music-volume-group {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
     padding: 0;
 }
 
 .volume-btn {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     border: none;
     background: #ff6b95;
     color: #fff;
     font-weight: 800;
+    font-size: 14px;
     cursor: pointer;
     /* box-shadow: 0 8px 16px rgba(255, 107, 149, 0.24); */
     transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
@@ -418,9 +452,10 @@ body:hover .scrollbar-decoration {
 }
 
 .volume-value {
-    min-width: 48px;
+    min-width: 40px;
     text-align: center;
     font-weight: 700;
+    font-size: 13px;
     color: #ff5c8f;
     letter-spacing: 0.2px;
 }

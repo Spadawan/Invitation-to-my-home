@@ -161,9 +161,14 @@ const setupYesNoFlow = (els) => {
                 if (!Number.isFinite(els.bgMusic.volume)) {
                     els.bgMusic.volume = DEFAULT_MUSIC_VOLUME;
                 }
-                els.bgMusic.play().catch(() => {
+                els.bgMusic.play().then(() => {
+                    els.musicWidget?.classList.add('visible');
+                }).catch(() => {
                     console.log('Auto-play was prevented. Please interact with the document first.');
                 });
+            }
+            if (els.musicWidget) {
+                els.musicWidget.classList.add('visible');
             }
 
             createHeartBurst(els.mainCard, 30);
