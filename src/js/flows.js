@@ -110,13 +110,24 @@ const setupMusicControls = (els) => {
 
 const setupYesNoFlow = (els) => {
     const noBtnResponses = [
-        'Really?', 'Are you sure?', 'Think again!', 'Last chance...', 'Pretty, please?',
-        'I guess you are getting the wrong button', "You're breaking my heart!", 'Come on...',
-        "Don't be shy!", "That's not nice!", 'You mean yes?', 'Try again?', "I'm still waiting...",
-        'Please reconsider!', 'You missed the yes button!', 'Maybe you misclicked?', 'One more chance?',
-        'How about now?', 'Changed your mind yet?', 'Cutie, I know you would say yes!', 'Say yes already!'
+        "Really?", "Are you sure?", "Think again!", "Last chance...",
+        "I guess you misclicked", "Come on...", "You mean yes?", "Try again?",
+        "You missed the yes button!", "Changed your mind yet?",
+        "Give it another shot!", "Why not?", "Cutie, I don't allow no for an answer! 😎",
+        "No = Yes, Yes = Yes", "I think you meant yes", "Maybe you wanna try again"
     ];
-    let noBtnClickCount = 0;
+
+    const shuffleArray = (array) => {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    };
+
+    let shuffledResponses = shuffleArray(noBtnResponses);
+    let currentIndex = 0;
 
     if (els.noBtn) {
         els.noBtn.addEventListener('mouseover', () => {
@@ -138,11 +149,14 @@ const setupYesNoFlow = (els) => {
             els.noBtn.style.position = 'fixed';
             els.noBtn.style.left = `${randomX}px`;
             els.noBtn.style.top = `${randomY}px`;
-            const responseIndex = noBtnClickCount < noBtnResponses.length
-                ? noBtnClickCount
-                : Math.floor(Math.random() * noBtnResponses.length);
-            els.noBtn.innerHTML = `<b>${noBtnResponses[responseIndex]}</b>`;
-            noBtnClickCount++;
+
+            els.noBtn.innerHTML = `<b>${shuffledResponses[currentIndex]}</b>`;
+            currentIndex++;
+
+            if (currentIndex >= shuffledResponses.length) {
+                shuffledResponses = shuffleArray(noBtnResponses);
+                currentIndex = 0;
+            }
             if (els.nervousCat) {
                 els.nervousCat.style.animation = 'nervousShake 0.1s infinite';
             }
@@ -188,7 +202,7 @@ const setupYesNoFlow = (els) => {
                             els.successArrow.classList.remove('hidden');
                             els.successArrow.style.opacity = '1';
                         }
-                        sprinkleHearts(els.successCelebration, 20);
+                        sprinkleHearts(els.successCelebration, 10);
                     }, 50);
                 }, 500);
             }, 300);
@@ -494,17 +508,6 @@ const setupDatetimeFlow = (els) => {
                 if (els.foodNextBtn) {
                     els.foodNextBtn.style.display = 'inline-block';
                 }
-                for (let i = 0; i < 50; i++) {
-                    setTimeout(() => {
-                        createHeart(els.datetimeCelebration, {
-                            left: '50%',
-                            top: '50%',
-                            scale: Math.random() * 0.5 + 0.5,
-                            opacity: Math.random() * 0.5 + 0.5,
-                            lifetime: (Math.random() * 1 + 1) * 1000
-                        });
-                    }, i * 40);
-                }
                 if (els.addDatetimeBtn) els.addDatetimeBtn.disabled = true;
                 els.datetimeContainer.querySelectorAll('.remove-datetime').forEach(btn => {
                     btn.disabled = true;
@@ -522,7 +525,7 @@ const setupDatetimeFlow = (els) => {
 const setupFoodNavigation = (els) => {
     if (els.foodNextBtn) {
         els.foodNextBtn.addEventListener('click', () => {
-            fadeSwapCards(els.datetimeCard, els.foodCard, () => sprinkleHearts(els.foodCelebration, 15));
+            fadeSwapCards(els.datetimeCard, els.foodCard, () => sprinkleHearts(els.foodCelebration, 8));
         });
     }
 };
@@ -530,7 +533,7 @@ const setupFoodNavigation = (els) => {
 const setupLocationNavigation = (els) => {
     if (els.chooseLocationBtn) {
         els.chooseLocationBtn.addEventListener('click', () => {
-            fadeSwapCards(els.successCard, els.locationCard, () => sprinkleHearts(els.locationCelebration, 15));
+            fadeSwapCards(els.successCard, els.locationCard, () => sprinkleHearts(els.locationCelebration, 8));
         });
     }
 
@@ -542,7 +545,7 @@ const setupLocationNavigation = (els) => {
                 setTimeout(() => createHeart(els.locationCelebration, { left: '50%', top: '50%', lifetime: 1000 }), i * 30);
             }
             setTimeout(() => {
-                fadeSwapCards(els.locationCard, els.datetimeCard, () => sprinkleHearts(els.datetimeCelebration, 15));
+                fadeSwapCards(els.locationCard, els.datetimeCard, () => sprinkleHearts(els.datetimeCelebration, 8));
             }, 1200);
         });
     }
@@ -556,9 +559,6 @@ const setupFoodFlow = (els) => {
             els.confirmFoodBtn.style.display = 'none';
             els.finalMessage?.classList.remove('hidden');
             setTimeout(() => els.finalMessage?.classList.add('show'), 50);
-            for (let i = 0; i < 30; i++) {
-                setTimeout(() => createHeart(els.foodCelebration, { left: '50%', top: '50%', lifetime: 1000 }), i * 40);
-            }
             document.querySelectorAll('.tile-btn[data-food], .custom-btn[data-food]').forEach(btn => {
                 btn.disabled = true;
                 btn.style.opacity = '0.7';
@@ -569,7 +569,7 @@ const setupFoodFlow = (els) => {
 
     if (els.drinksNextBtn) {
         els.drinksNextBtn.addEventListener('click', () => {
-            fadeSwapCards(els.foodCard, els.drinksCard, () => sprinkleHearts(els.drinksCelebration, 15));
+            fadeSwapCards(els.foodCard, els.drinksCard, () => sprinkleHearts(els.drinksCelebration, 8));
         });
     }
 };
@@ -605,7 +605,7 @@ const setupDrinkFlow = (els, onNoteStep) => {
 
     if (els.completionNextBtn) {
         els.completionNextBtn.addEventListener('click', () => {
-            fadeSwapCards(els.drinksCard, els.noteCard, () => sprinkleHearts(els.noteCelebration, 15));
+            fadeSwapCards(els.drinksCard, els.noteCard, () => sprinkleHearts(els.noteCelebration, 8));
             onNoteStep?.();
         });
     }
@@ -626,23 +626,35 @@ const enforceNoteLimits = (els) => {
 };
 
 const showCompletionCard = (els, onCompletionReady) => {
-    fadeSwapCards(els.noteCard, els.completionCard, () => {
-        els.completionCard?.classList.add('show');
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-        sprinkleHearts(els.completionHearts, 30);
-        if (appState.invitationEmailSent) {
-            const form = document.getElementById('email-form');
-            const success = document.getElementById('email-success');
-            if (form && success) {
-                form.classList.add('disabled');
-                success.style.display = 'block';
-                document.getElementById('user-email').disabled = true;
-                document.getElementById('send-email-btn').disabled = true;
+    if (!els.noteCard || !els.completionCard) return;
+
+    els.noteCard.style.transform = 'scale(0.8)';
+    els.noteCard.style.opacity = '0';
+    
+    setTimeout(() => {
+        els.noteCard.style.display = 'none';
+        els.completionCard.style.display = 'block';
+        els.completionCard.classList.remove('hidden');
+        
+        setTimeout(() => {
+            els.completionCard.classList.add('show');
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+            sprinkleHearts(els.completionHearts, 12);
+            
+            if (appState.invitationEmailSent) {
+                const form = document.getElementById('email-form');
+                const success = document.getElementById('email-success');
+                if (form && success) {
+                    form.classList.add('disabled');
+                    success.style.display = 'block';
+                    document.getElementById('user-email').disabled = true;
+                    document.getElementById('send-email-btn').disabled = true;
+                }
             }
-        }
-        onCompletionReady?.();
-    });
+            onCompletionReady?.();
+        }, 50);
+    }, 500);
 };
 
 const setupNoteFlow = (els, onCompletionReady) => {

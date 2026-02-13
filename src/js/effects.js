@@ -92,14 +92,17 @@ const sprinkleHearts = (container, count = 15) => {
     if (!container) return;
     for (let i = 0; i < count; i++) {
         setTimeout(() => {
-            createHeart(container, {
+            const heart = createHeart(container, {
                 left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDuration: `${Math.random() * 2 + 2}s`,
+                top: '100%',
+                animationDuration: `${Math.random() * 2 + 3}s`,
                 opacity: Math.random() * 0.7 + 0.3,
                 scale: Math.random() * 0.8 + 0.5
             });
-        }, i * 100);
+            if (heart) {
+                heart.style.setProperty('--drift-x', (Math.random() * 100 - 50) + 'px');
+            }
+        }, i * 150);
     }
 };
 
