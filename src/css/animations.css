@@ -5,13 +5,17 @@
 
 @keyframes float {
     0% {
-        transform: translateY(0) rotate(0deg);
+        transform: translateY(0) translateX(0) rotate(0deg);
         opacity: 0;
     }
     10% { opacity: 1; }
-    90% { opacity: 0.8; }
+    50% {
+        transform: translateY(-100vh) translateX(var(--drift-x, 0px)) rotate(360deg);
+        opacity: 0.8;
+    }
+    90% { opacity: 0.4; }
     100% {
-        transform: translateY(-200vh) rotate(720deg);
+        transform: translateY(-200vh) translateX(calc(var(--drift-x, 0px) * 1.5)) rotate(720deg);
         opacity: 0;
     }
 }

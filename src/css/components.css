@@ -564,6 +564,8 @@ body:hover .scrollbar-decoration {
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     max-width: 550px;
     width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 #completion-card.show {
