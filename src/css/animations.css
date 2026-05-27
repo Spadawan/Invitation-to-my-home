@@ -113,15 +113,15 @@
 }
 
 @keyframes selected-pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255, 107, 149, 0.4); }
-    70% { box-shadow: 0 0 0 10px rgba(255, 107, 149, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 107, 149, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(78, 149, 176, 0.35); }
+    70% { box-shadow: 0 0 0 10px rgba(78, 149, 176, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(78, 149, 176, 0); }
 }
 
 @keyframes selected-pulse-dark {
-    0% { box-shadow: 0 0 0 0 rgba(255, 139, 179, 0.2); }
-    70% { box-shadow: 0 0 0 10px rgba(255, 139, 179, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 139, 179, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(121, 174, 194, 0.2); }
+    70% { box-shadow: 0 0 0 10px rgba(121, 174, 194, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(121, 174, 194, 0); }
 }
 
 @keyframes check-pop {

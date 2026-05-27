@@ -44,7 +44,7 @@
 .cat-svg {
     width: 200px;
     height: auto;
-    filter: drop-shadow(0 5px 10px rgba(255, 107, 149, 0.3));
+    filter: drop-shadow(0 5px 10px rgba(78, 149, 176, 0.3));
     animation: bounce 3s ease-in-out infinite;
     position: relative;
     z-index: 2;
@@ -108,7 +108,7 @@
     border-radius: 50%;
     background: linear-gradient(135deg, #f3fbfc, #eaf6f7);
     border: 2px solid #79aec2;
-    box-shadow: 0 4px 10px rgba(255, 139, 179, 0.3);
+    box-shadow: 0 4px 10px rgba(121, 174, 194, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;

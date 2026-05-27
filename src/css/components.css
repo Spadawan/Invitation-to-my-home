@@ -19,12 +19,12 @@
 .yes-btn {
     background: linear-gradient(45deg, #4e95b0, #79aec2);
     color: white;
-    box-shadow: 0 5px 15px rgba(255, 107, 149, 0.4);
+    box-shadow: 0 5px 15px rgba(78, 149, 176, 0.35);
 }
 
 .yes-btn:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 25px rgba(255, 107, 149, 0.5);
+    box-shadow: 0 10px 25px rgba(78, 149, 176, 0.45);
 }
 
 .yes-btn:active {
@@ -50,7 +50,7 @@
 .no-btn {
     background: linear-gradient(45deg, #79aec2, #4e95b0);
     color: white;
-    box-shadow: 0 5px 15px rgba(255, 107, 149, 0.4);
+    box-shadow: 0 5px 15px rgba(78, 149, 176, 0.35);
     border: none;
 }
 
@@ -121,7 +121,7 @@
 }
 
 .btn-icon:hover {
-    background: rgba(255, 107, 149, 0.1);
+    background: rgba(78, 149, 176, 0.1);
 }
 
 .add-btn {
@@ -134,7 +134,7 @@
 }
 
 .add-btn:hover {
-    background: rgba(255, 107, 149, 0.1);
+    background: rgba(78, 149, 176, 0.1);
 }
 
 .datetime-container {
@@ -167,7 +167,7 @@
 .date-input input, .time-input input {
     width: 100%;
     padding: 12px 15px;
-    border: 2px solid rgba(255, 182, 193, 0.5);
+    border: 2px solid rgba(121, 174, 194, 0.5);
     border-radius: 12px;
     font-family: var(--font-family);
     font-size: 16px;
@@ -178,9 +178,9 @@
 }
 
 .date-input input:focus, .time-input input:focus {
-    border-color: rgba(255, 107, 149, 0.8);
+    border-color: rgba(78, 149, 176, 0.85);
     outline: none;
-    box-shadow: 0 4px 10px rgba(255, 107, 149, 0.2);
+    box-shadow: 0 4px 10px rgba(78, 149, 176, 0.2);
 }
 
 .datetime-actions {
@@ -189,8 +189,8 @@
 
 .flatpickr-calendar {
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(255, 107, 149, 0.2);
-    border: 2px solid rgba(255, 182, 193, 0.3);
+    box-shadow: 0 10px 25px rgba(78, 149, 176, 0.2);
+    border: 2px solid rgba(121, 174, 194, 0.3);
     font-family: var(--font-family);
     animation: calendar-pop 0.3s ease-out;
     overflow: hidden;
@@ -233,13 +233,13 @@
     border-radius: 10px;
     border: 2px solid transparent;
     background-clip: padding-box;
-    box-shadow: 0 0 5px rgba(255, 107, 149, 0.15);
+    box-shadow: 0 0 5px rgba(78, 149, 176, 0.15);
 }
 
 ::-webkit-scrollbar-thumb:hover,
 * ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(45deg, #4e95b0, #a8cfdb);
-    box-shadow: 0 0 8px rgba(255, 107, 149, 0.3);
+    box-shadow: 0 0 8px rgba(78, 149, 176, 0.3);
 }
 
 .scrollbar-decoration {
@@ -286,7 +286,7 @@ body:hover .scrollbar-decoration {
     color: #4e95b0;
     display: grid;
     place-items: center;
-    /* box-shadow: 0 8px 18px rgba(255, 107, 149, 0.25); */
+    /* box-shadow: 0 8px 18px rgba(78, 149, 176, 0.25); */
     cursor: pointer;
     transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
@@ -313,8 +313,8 @@ body:hover .scrollbar-decoration {
     max-width: 250px;
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.94);
-    border: 1.5px solid rgba(255, 107, 149, 0.18);
-    /* box-shadow: 0 16px 32px rgba(255, 107, 149, 0.2), 0 8px 18px rgba(0, 0, 0, 0.05); */
+    border: 1.5px solid rgba(78, 149, 176, 0.18);
+    /* box-shadow: 0 16px 32px rgba(78, 149, 176, 0.2), 0 8px 18px rgba(0, 0, 0, 0.05); */
     backdrop-filter: blur(7px);
     opacity: 0;
     pointer-events: none;
@@ -393,13 +393,13 @@ body:hover .scrollbar-decoration {
     font-weight: 700;
     letter-spacing: 0.2px;
     cursor: pointer;
-    /* box-shadow: 0 8px 16px rgba(255, 107, 149, 0.12); */
+    /* box-shadow: 0 8px 16px rgba(78, 149, 176, 0.12); */
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
 .music-play-btn:hover {
     transform: translateY(-1px);
-    /* box-shadow: 0 12px 24px rgba(255, 107, 149, 0.18); */
+    /* box-shadow: 0 12px 24px rgba(78, 149, 176, 0.18); */
 }
 
 .music-play-btn .pause-icon,
@@ -410,8 +410,8 @@ body:hover .scrollbar-decoration {
 .music-play-btn.is-playing {
     background: #f3fbfc;
     color: #4b8fa9;
-    border-color: rgba(255, 107, 149, 0.35);
-    /* box-shadow: 0 10px 22px rgba(255, 107, 149, 0.18); */
+    border-color: rgba(78, 149, 176, 0.35);
+    /* box-shadow: 0 10px 22px rgba(78, 149, 176, 0.18); */
 }
 
 .music-play-btn.is-playing .play-icon,
@@ -531,7 +531,7 @@ body:hover .scrollbar-decoration {
     background-color: #dceff3;
     border-color: #4e95b0;
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 4px 12px rgba(255, 107, 149, 0.25);
+    box-shadow: 0 4px 12px rgba(78, 149, 176, 0.25);
     animation: selected-pulse 1.5s infinite;
 }
 
@@ -677,7 +677,7 @@ body:hover .scrollbar-decoration {
 .custom-text-input {
     width: 100%;
     padding: 12px 15px;
-    border: 2px solid rgba(255, 182, 193, 0.5);
+    border: 2px solid rgba(121, 174, 194, 0.5);
     border-radius: 12px;
     font-family: var(--font-family);
     font-size: 16px;
@@ -688,9 +688,9 @@ body:hover .scrollbar-decoration {
 }
 
 .custom-text-input:focus {
-    border-color: rgba(255, 107, 149, 0.8);
+    border-color: rgba(78, 149, 176, 0.85);
     outline: none;
-    box-shadow: 0 4px 10px rgba(255, 107, 149, 0.2);
+    box-shadow: 0 4px 10px rgba(78, 149, 176, 0.2);
 }
 
 .word-counter {
@@ -708,7 +708,7 @@ body:hover .scrollbar-decoration {
     width: 100%;
     min-height: 150px;
     padding: 15px;
-    border: 2px solid rgba(255, 182, 193, 0.5);
+    border: 2px solid rgba(121, 174, 194, 0.5);
     border-radius: 15px;
     font-family: var(--font-family);
     font-size: 16px;
@@ -719,9 +719,9 @@ body:hover .scrollbar-decoration {
 }
 
 #note-textarea:focus {
-    border-color: rgba(255, 107, 149, 0.8);
+    border-color: rgba(78, 149, 176, 0.85);
     outline: none;
-    box-shadow: 0 4px 10px rgba(255, 107, 149, 0.2);
+    box-shadow: 0 4px 10px rgba(78, 149, 176, 0.2);
 }
 
 .note-actions {
@@ -732,7 +732,7 @@ body:hover .scrollbar-decoration {
 
 .email-container {
     margin-top: 30px;
-    background: rgba(255, 107, 149, 0.05);
+    background: rgba(78, 149, 176, 0.05);
     border-radius: 15px;
     padding: 20px;
     transition: all 0.3s ease;
@@ -754,7 +754,7 @@ body:hover .scrollbar-decoration {
 #user-email {
     width: 100%;
     padding: 14px 18px;
-    border: 2px solid rgba(255, 182, 193, 0.5);
+    border: 2px solid rgba(121, 174, 194, 0.5);
     border-radius: 12px;
     font-family: var(--font-family);
     font-size: 16px;
@@ -764,9 +764,9 @@ body:hover .scrollbar-decoration {
 }
 
 #user-email:focus {
-    border-color: rgba(255, 107, 149, 0.8);
+    border-color: rgba(78, 149, 176, 0.85);
     outline: none;
-    box-shadow: 0 4px 10px rgba(255, 107, 149, 0.2);
+    box-shadow: 0 4px 10px rgba(78, 149, 176, 0.2);
 }
 
 #user-email:invalid:not(:placeholder-shown) {
@@ -814,7 +814,7 @@ body:hover .scrollbar-decoration {
     font-weight: 600;
     display: inline-block;
     margin: 10px 0;
-    box-shadow: 0 4px 10px rgba(255, 107, 149, 0.25);
+    box-shadow: 0 4px 10px rgba(78, 149, 176, 0.25);
     animation: badge-pop 0.3s ease-out;
 }
 
@@ -822,7 +822,7 @@ body:hover .scrollbar-decoration {
     margin: 20px 0;
     padding: 20px;
     border-radius: 15px;
-    background: rgba(255, 107, 149, 0.05);
+    background: rgba(78, 149, 176, 0.05);
     text-align: center;
     transform: translateY(20px);
     opacity: 0;
@@ -887,7 +887,7 @@ body:hover .scrollbar-decoration {
 }
 
 .food-selection-status {
-    background: rgba(255, 107, 149, 0.05);
+    background: rgba(78, 149, 176, 0.05);
     color: #888;
 }
 
@@ -897,7 +897,7 @@ body:hover .scrollbar-decoration {
 }
 
 .food-selection-status.active {
-    background: rgba(255, 107, 149, 0.1);
+    background: rgba(78, 149, 176, 0.1);
     color: #4e95b0;
     font-weight: 500;
 }
@@ -932,19 +932,19 @@ body:hover .scrollbar-decoration {
 }
 
 .local-storage-info {
-    background: rgba(255, 107, 149, 0.9);
+    background: rgba(78, 149, 176, 0.9);
     color: white;
     border-radius: 20px;
     padding: 10px 15px;
     margin-top: 15px;
     font-size: 14px;
     animation: fadeIn 0.5s ease-out forwards;
-    box-shadow: 0 4px 10px rgba(255, 107, 149, 0.3);
+    box-shadow: 0 4px 10px rgba(78, 149, 176, 0.3);
 }
 
 .clear-data-btn {
     background: none;
-    border: 2px solid rgba(255, 107, 149, 0.5);
+    border: 2px solid rgba(78, 149, 176, 0.45);
     color: #4e95b0;
     margin-top: 20px;
     font-size: 14px;
@@ -955,9 +955,9 @@ body:hover .scrollbar-decoration {
 }
 
 .clear-data-btn:hover {
-    background: rgba(255, 107, 149, 0.1);
+    background: rgba(78, 149, 176, 0.1);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(255, 107, 149, 0.2);
+    box-shadow: 0 4px 8px rgba(78, 149, 176, 0.2);
 }
 
 .clear-data-confirmation {
