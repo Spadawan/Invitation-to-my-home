@@ -1,6 +1,6 @@
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
-const createHeart = (container, options = {}) => {
+const createStar = (container, options = {}) => {
     if (!container) return null;
     const heart = document.createElement('div');
     heart.classList.add(options.className || 'heart');
@@ -29,7 +29,7 @@ const createHeartBurst = (element, count = 15) => {
             const angle = Math.random() * Math.PI * 2;
             const distance = Math.random() * 40 + 15;
             const duration = Math.random() * 0.4 + 0.4;
-            const heart = createHeart(document.body, {
+            const heart = createStar(document.body, {
                 className: 'heart',
                 fixed: true,
                 left: `${centerX}px`,
@@ -64,7 +64,7 @@ const createButtonHeartEffect = (button) => {
             const angle = (i / 8) * Math.PI * 2;
             const offsetX = Math.cos(angle) * (buttonWidth / 1.5);
             const offsetY = Math.sin(angle) * (buttonHeight / 1.2);
-            const heart = createHeart(document.body, {
+            const heart = createStar(document.body, {
                 className: 'heart button-heart',
                 fixed: true,
                 left: `${centerX + offsetX}px`,
@@ -92,7 +92,7 @@ const sprinkleHearts = (container, count = 15) => {
     if (!container) return;
     for (let i = 0; i < count; i++) {
         setTimeout(() => {
-            const heart = createHeart(container, {
+            const heart = createStar(container, {
                 left: `${Math.random() * 100}%`,
                 top: '100%',
                 animationDuration: `${Math.random() * 2 + 3}s`,
@@ -134,7 +134,7 @@ const startCherryBlossoms = (container) => {
 const startBackgroundHearts = (container) => {
     if (!container) return null;
     return setInterval(() => {
-        createHeart(container, {
+        createStar(container, {
             left: `${Math.random() * 100}%`,
             animationDuration: `${Math.random() * 2 + 5}s`,
             opacity: Math.random() * 0.5 + 0.3,
@@ -146,7 +146,7 @@ const startBackgroundHearts = (container) => {
 
 const attachCursorHearts = () => {
     const heartTrailContainer = document.createElement('div');
-    heartTrailContainer.className = 'heart-trail-container';
+    heartTrailContainer.className = 'star-trail-container';
     document.body.appendChild(heartTrailContainer);
     let mouseX = 0;
     let mouseY = 0;
@@ -154,16 +154,16 @@ const attachCursorHearts = () => {
         mouseX = event.clientX;
         mouseY = event.clientY;
         if (Math.random() > 0.7) {
-            createHeartAtCursor(heartTrailContainer, mouseX, mouseY);
+            createStarAtCursor(heartTrailContainer, mouseX, mouseY);
         }
     });
 };
 
-const createHeartAtCursor = (container, x, y) => {
+const createStarAtCursor = (container, x, y) => {
     const size = Math.random() * 15 + 8;
     const opacity = clamp(Math.random() * 0.5 + 0.5, 0, 1);
     const heart = document.createElement('div');
-    heart.className = 'cursor-heart';
+    heart.className = 'cursor-star';
     heart.style.left = `${x}px`;
     heart.style.top = `${y}px`;
     heart.style.setProperty('--random-x', (Math.random() * 2 - 1));
@@ -175,7 +175,7 @@ const createHeartAtCursor = (container, x, y) => {
 };
 
 export {
-    createHeart,
+    createStar,
     createHeartBurst,
     createButtonHeartEffect,
     sprinkleHearts,

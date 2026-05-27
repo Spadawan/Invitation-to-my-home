@@ -1,5 +1,5 @@
 import { appState, selection, syncSelections } from './state.js';
-import { createButtonHeartEffect, createHeart, createHeartBurst, sprinkleHearts } from './effects.js';
+import { createButtonHeartEffect, createStar, createHeartBurst, sprinkleHearts } from './effects.js';
 
 const DEFAULT_MUSIC_VOLUME = 0.5;
 const VOLUME_STEP = 0.05;
@@ -542,7 +542,7 @@ const setupLocationNavigation = (els) => {
             if (!hasSelectionForType('location')) return;
             syncSelections();
             for (let i = 0; i < 20; i++) {
-                setTimeout(() => createHeart(els.locationCelebration, { left: '50%', top: '50%', lifetime: 1000 }), i * 30);
+                setTimeout(() => createStar(els.locationCelebration, { left: '50%', top: '50%', lifetime: 1000 }), i * 30);
             }
             setTimeout(() => {
                 fadeSwapCards(els.locationCard, els.datetimeCard, () => sprinkleHearts(els.datetimeCelebration, 8));

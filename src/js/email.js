@@ -1,5 +1,5 @@
 import { appState, formatSelection } from './state.js';
-import { createHeart } from './effects.js';
+import { createStar } from './effects.js';
 
 const disableForm = (els) => {
     els.emailForm?.classList.add('disabled');
@@ -16,7 +16,7 @@ const initEmailForm = (els) => {
     const markAsSent = () => {
         disableForm(els);
         for (let i = 0; i < 20; i++) {
-            setTimeout(() => createHeart(els.completionHearts), i * 100);
+            setTimeout(() => createStar(els.completionHearts), i * 100);
         }
     };
 
@@ -40,13 +40,13 @@ const initEmailForm = (els) => {
 
         const templateParams = {
             to_email: OWNER_NOTIFICATION_EMAIL,
+            guest_first_name: firstName,
             guest_email: firstName,
             date_options: appState.dateOptions.map(opt => `${opt.date} à ${opt.time}`).join(', '),
-            locations: formatSelection(appState.selectedLocations),
             food_preferences: formatSelection(appState.selectedFoods),
             user_note: appState.userNote,
             owner_email: OWNER_NOTIFICATION_EMAIL,
-            email_subject: "Nouvelle participation à l'invitation"
+            email_subject: "Nouvelle participation à la soirée"
         };
 
         emailjs.send('will-you-date-me', 'will-you-date-me-form', templateParams)
