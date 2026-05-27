@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wanna go on a date?</title>
+    <title>On se retrouve chez moi ?</title>
     <link rel="icon" href="assets/images/love-letter.svg" type="image/svg+xml">
 
     <link rel="stylesheet" href="src/css/main.css">
@@ -51,19 +51,19 @@
     </div>
 
     <div class="music-widget" id="music-widget">
-        <button class="music-toggle" id="music-toggle" aria-label="Music controls">
-            <img src="assets/images/music.svg" alt="Music note icon" class="music-icon">
+        <button class="music-toggle" id="music-toggle" aria-label="Contrôles de la musique">
+            <img src="assets/images/music.svg" alt="Icône de note de musique" class="music-icon">
         </button>
-        <span class="music-tooltip" aria-hidden="true">Music controls</span>
+        <span class="music-tooltip" aria-hidden="true">Contrôles de la musique</span>
         <div class="music-panel" id="music-panel">
             <div class="music-panel-header">
-                <span class="panel-title">Background music</span>
+                <span class="panel-title">Musique d'ambiance</span>
             </div>
             <div class="music-controls-row">
-                <button class="music-play-btn" id="music-play-toggle" aria-label="Play or pause background music">
+                <button class="music-play-btn" id="music-play-toggle" aria-label="Lire ou mettre en pause la musique d'ambiance">
                     <span class="play-icon">▶</span>
                     <span class="pause-icon">❚❚</span>
-                    <span class="play-text">Play</span>
+                    <span class="play-text">Lire</span>
                     <span class="pause-text">Pause</span>
                 </button>
                 <div class="music-volume-group">
@@ -153,12 +153,12 @@
             </div>
             
             <div class="card-content">
-                <h1>Hello <span class="special-text gorgeous">gorgeous</span>...</h1>
+                <h1>Salut <span class="special-text gorgeous">toi ✨</span>...</h1>
                 <div class="sakura-divider"></div>
-                <p class="question">Will you go on a date with me?</p>
+                <p class="question">Ça te dit de venir passer un bon moment à la maison ?</p>
                 <div class="buttons">
-                    <button id="yes-btn" class="btn yes-btn">YES! ♥</button>
-                    <button id="no-btn" class="btn no-btn"><b>NO! ☹</button>
+                    <button id="yes-btn" class="btn yes-btn">OUI ! ♥</button>
+                    <button id="no-btn" class="btn no-btn"><b>Pas cette fois ☹</b></button>
                 </div>
             </div>
         </div>
@@ -168,8 +168,8 @@
             <div class="card-content">
                 <h1>Yayyy!!! 🌸</h1>
                 <div class="sakura-divider"></div>
-                <p>So excited to see you!!!</p>
-                <p class="message">I'll make it special, I promise! </p>
+                <p>Trop hâte de te voir !!!</p>
+                <p class="message">Je te prépare un moment super sympa, promis ! </p>
                 <div class="cute-animation">
                     <!-- Cat with heart SVG -->
                     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -257,7 +257,7 @@
                     </div>
                 </div>
                 <div class="next-step">
-                    <button id="choose-location-btn" class="btn yes-btn">Let's choose a place ♥</button>
+                    <button id="choose-location-btn" class="btn yes-btn">Choisissons une activité ♥</button>
                 </div>
             </div>
         </div>
@@ -266,9 +266,9 @@
         <div class="card hidden" id="location-card">
             <div class="hearts-celebration" id="location-celebration"></div>
             <div class="card-content">
-                <h1>Pick a <span class="special-text">place</span>...</h1>
+                <h1>Choisis une <span class="special-text">activité</span>...</h1>
                 <div class="sakura-divider"></div>
-                <p class="question">Where would you like to go?</p>
+                <p class="question">Qu'est-ce qui te ferait plaisir ?</p>
                 <div class="location-options">
                     <button class="tile-btn" data-location="cafe">
                         <img src="assets/images/places/cafe.jpg" alt="Café">
@@ -291,18 +291,18 @@
                         <span class="tile-label">Mall</span>
                     </button>
                     <button class="tile-btn" data-location="around-city">
-                        <img src="assets/images/places/around-the-city.jpg" alt="Around the City">
-                        <span class="tile-label">Around the City</span>
+                        <img src="assets/images/places/around-the-city.jpg" alt="Balade en ville">
+                        <span class="tile-label">Balade en ville</span>
                     </button>
                     <button class="custom-btn" data-location="somewhere-else">
                         <span class="custom-icon">✨</span>
-                        <span><strong>Somewhere Else</strong></span>
+                        <span><strong>Autre idée</strong></span>
                     </button>
                 </div>
                 <div class="selected-location-message hidden" id="selected-location-message">
-                    <p class="message">Nice choice! 💕</p>
+                    <p class="message">Super choix ! 💕</p>
                 </div>
-                <button id="confirm-location-btn" class="btn yes-btn">Continue ♥</button>
+                <button id="confirm-location-btn" class="btn yes-btn">Continuer ♥</button>
             </div>
         </div>
         
@@ -310,34 +310,34 @@
         <div class="card hidden" id="datetime-card">
             <div class="hearts-celebration" id="datetime-celebration"></div>
             <div class="card-content">
-                <h1>Pick a <span class="special-text">when</span>...</h1>
+                <h1>Choisis un <span class="special-text">moment</span>...</h1>
                 <div class="sakura-divider"></div>
-                <p class="question">What time would work for you?</p>
+                <p class="question">Quel créneau te convient le mieux ?</p>
                 <div class="datetime-container">
                     <div class="datetime-row" id="datetime-row-template">
                         <div class="date-input">
                             <label>Date</label>
-                            <input type="text" class="date-picker" placeholder="Select a date" readonly>
+                            <input type="text" class="date-picker" placeholder="Choisir une date" readonly>
                         </div>
                         <div class="time-input">
-                            <label>Time</label>
-                            <input type="text" class="time-picker" placeholder="Select time">
+                            <label>Heure</label>
+                            <input type="text" class="time-picker" placeholder="Choisir une heure">
                         </div>
-                        <button class="remove-datetime btn-icon" title="Remove this option">
+                        <button class="remove-datetime btn-icon" title="Retirer ce créneau">
                             <span>✕</span>
                         </button>
                     </div>
                 </div>
                 <button id="add-datetime" class="btn add-btn">
-                    <span>+ Add another option</span>
+                    <span>+ Ajouter un autre créneau</span>
                 </button>
                 <div class="datetime-actions">
-                    <button id="confirm-datetime" class="btn yes-btn">Confirm ♥</button>
+                    <button id="confirm-datetime" class="btn yes-btn">Valider ♥</button>
                 </div>
                 
                 <div class="selected-datetime-message hidden" id="selected-datetime-message">
-                    <p class="message">Perfect time! 💕</p>
-                    <button id="food-next-btn" class="btn yes-btn" style="margin-top: 15px; display: inline-block;">Let's Pick Some Food ♥</button>
+                    <p class="message">Parfait ! 💕</p>
+                    <button id="food-next-btn" class="btn yes-btn" style="margin-top: 15px; display: inline-block;">Passons au repas ♥</button>
                 </div>
             </div>
         </div>
@@ -346,11 +346,11 @@
         <div class="card hidden" id="food-card">
             <div class="hearts-celebration" id="food-celebration"></div>
             <div class="card-content">
-                <h1>What would you like to <span class="special-text">eat</span>?</h1>
+                <h1>Qu'est-ce que tu aimerais <span class="special-text">manger</span> ?</h1>
                 <div class="sakura-divider"></div>
-                <p class="question">Choose whatever you desire 😋</p>
+                <p class="question">Choisis ce qui te fait envie 😋</p>
                 <div class="selection-status" id="food-selection-status">
-                    <p>Select your food preferences</p>
+                    <p>Sélectionne tes envies de repas</p>
                 </div>
                 <div class="location-options">
                     <button class="tile-btn" data-food="ramen">
@@ -371,17 +371,17 @@
                     </button>
                     <button class="custom-btn" data-food="custom">
                         <span class="custom-icon">✨</span>
-                        <span><strong>Something else</strong></span>
+                        <span><strong>Autre chose</strong></span>
                     </button>
                 </div>
                 <div class="selected-location-message hidden" id="selected-food-message">
-                    <p class="message">Yummy! I'm already hungry! 🤤</p>
+                    <p class="message">Miam ! Ça donne faim 🤤</p>
                 </div>
-                <button id="confirm-food-btn" class="btn yes-btn" style="display: none;">Confirm ♥</button>
+                <button id="confirm-food-btn" class="btn yes-btn" style="display: none;">Valider ♥</button>
 
                 <div class="final-message hidden" id="final-message">
-                    <p class="message">Let's choose some drinks too! 🥤</p>
-                    <button id="drinks-next-btn" class="btn yes-btn" style="margin-top: 15px; display: inline-block;">Choose Some Drinks ♥</button>
+                    <p class="message">Choisissons aussi des boissons ! 🥤</p>
+                    <button id="drinks-next-btn" class="btn yes-btn" style="margin-top: 15px; display: inline-block;">Choisir des boissons ♥</button>
                 </div>
             </div>
         </div>
@@ -390,11 +390,11 @@
         <div class="card hidden" id="drinks-card">
             <div class="hearts-celebration" id="drinks-celebration"></div>
             <div class="card-content">
-                <h1>Pick a <span class="special-text">drink</span>...</h1>
+                <h1>Choisis une <span class="special-text">boisson</span>...</h1>
                 <div class="sakura-divider"></div>
-                <p class="question">What would you like to drink?</p>
+                <p class="question">Qu'est-ce que tu aimerais boire ?</p>
                 <div class="selection-status" id="drink-selection-status">
-                    <p>Select your drink preferences</p>
+                    <p>Sélectionne tes envies de boisson</p>
                 </div>
                 <div class="location-options">
                     <button class="tile-btn" data-drink="coffee">
@@ -415,16 +415,16 @@
                     </button>
                     <button class="custom-btn" data-drink="custom">
                         <span class="custom-icon">✨</span>
-                        <span><strong>Something else</strong></span>
+                        <span><strong>Autre chose</strong></span>
                     </button>
                 </div>
                 <div class="selected-location-message hidden" id="selected-drink-message">
-                    <p class="message">Sounds refreshing! 🥰</p>
+                    <p class="message">Ça a l'air rafraîchissant ! 🥰</p>
                 </div>
-                <button id="confirm-drink-btn" class="btn yes-btn" style="display: none;">Confirm ♥</button>
+                <button id="confirm-drink-btn" class="btn yes-btn" style="display: none;">Valider ♥</button>
 
                 <div class="final-message hidden" id="final-drink-message">
-                    <button id="completion-next-btn" class="btn yes-btn" style="margin-top: 15px; display: inline-block;">Finish! ♥</button>
+                    <button id="completion-next-btn" class="btn yes-btn" style="margin-top: 15px; display: inline-block;">Terminer ! ♥</button>
                 </div>
             </div>
         </div>
@@ -433,15 +433,15 @@
         <div class="card hidden" id="note-card">
             <div class="hearts-celebration" id="note-celebration"></div>
             <div class="card-content">
-                <h1>Leave a <span class="special-text">note</span>...</h1>
+                <h1>Laisse une <span class="special-text">note</span>...</h1>
                 <div class="sakura-divider"></div>
-                <p class="question">Anything special about you<br>that I should know?</p>
+                <p class="question">Un détail sympa à partager<br>pour mieux t'accueillir ?</p>
                 <div class="note-container">
-                    <textarea id="note-textarea" placeholder="Share your thoughts here... (max 150 words)" maxlength="1000"></textarea>
-                    <div class="word-counter">0/150 words</div>
+                    <textarea id="note-textarea" placeholder="Écris ton message ici... (max 150 mots)" maxlength="1000"></textarea>
+                    <div class="word-counter">0/150 mots</div>
                 </div>
                 <div class="note-actions">
-                    <button id="save-note-btn" class="btn yes-btn">Continue ♥</button>
+                    <button id="save-note-btn" class="btn yes-btn">Continuer ♥</button>
                 </div>
             </div>
         </div>
@@ -450,28 +450,28 @@
         <div class="card hidden" id="completion-card">
             <div class="hearts-celebration" id="completion-hearts"></div>
             <div class="card-content">
-                <h1>All Set! <span class="special-text">💕</span></h1>
+                <h1>Tout est prêt ! <span class="special-text">💕</span></h1>
                 <div class="sakura-divider"></div>
                 <div class="celebration-icon">🎉</div>
-                <p class="big-message">Can't wait to see you!</p>
-                <p class="message">Our date will be perfectly set.</p>
-                <p class="message">I'll make it special to the best of my ability.</p>
+                <p class="big-message">Hâte de te voir !</p>
+                <p class="message">Ton invitation est bien enregistrée.</p>
+                <p class="message">Je ferai de mon mieux pour te recevoir chaleureusement.</p>
 
                 <div class="email-container" id="email-container">
-                    <p class="email-label">Want a reminder? (optional)</p>
+                    <p class="email-label">Tu veux un rappel ? (optionnel)</p>
                     <form id="email-form" class="email-form">
                         <input 
                             type="email" 
                             id="user-email" 
-                            placeholder="Enter your email" 
+                            placeholder="Entre ton e-mail" 
                             pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                            title="Please enter a valid email address" 
+                            title="Merci d'entrer une adresse e-mail valide" 
                         />
-                        <button type="submit" id="send-email-btn" class="btn yes-btn">Send Invitation</button>
+                        <button type="submit" id="send-email-btn" class="btn yes-btn">Envoyer l'invitation</button>
                     </form>
-                    <p id="email-error" class="email-error">Please enter a valid email address</p>
+                    <p id="email-error" class="email-error">Merci d'entrer une adresse e-mail valide</p>
                     <div id="email-success" class="email-success">
-                        <p>✅ Invitation sent successfully!</p>
+                        <p>✅ Invitation envoyée avec succès !</p>
                     </div>
                 </div>
             </div>
