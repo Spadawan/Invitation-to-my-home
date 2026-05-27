@@ -106,8 +106,8 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #fff5f8, #ffecf0);
-    border: 2px solid #ff8bb3;
+    background: linear-gradient(135deg, #f3fbfc, #eaf6f7);
+    border: 2px solid #79aec2;
     box-shadow: 0 4px 10px rgba(255, 139, 179, 0.3);
     display: flex;
     justify-content: center;
@@ -122,7 +122,7 @@
     position: absolute;
     width: 30px;
     height: 5px;
-    background-color: #ff6b95;
+    background-color: #4e95b0;
     border-radius: 4px;
 }
 
@@ -133,7 +133,7 @@
     right: 10px;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-left: 15px solid #ff6b95;
+    border-left: 15px solid #4e95b0;
 }
 
 .floating-hearts {

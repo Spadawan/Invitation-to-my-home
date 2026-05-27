@@ -17,7 +17,7 @@
 }
 
 .yes-btn {
-    background: linear-gradient(45deg, #ff6b95, #ff8bb3);
+    background: linear-gradient(45deg, #4e95b0, #79aec2);
     color: white;
     box-shadow: 0 5px 15px rgba(255, 107, 149, 0.4);
 }
@@ -48,7 +48,7 @@
 }
 
 .no-btn {
-    background: linear-gradient(45deg, #ff8bb3, #ff6b95);
+    background: linear-gradient(45deg, #79aec2, #4e95b0);
     color: white;
     box-shadow: 0 5px 15px rgba(255, 107, 149, 0.4);
     border: none;
@@ -107,7 +107,7 @@
 .btn-icon {
     background: none;
     border: none;
-    color: #ff6b95;
+    color: #4e95b0;
     cursor: pointer;
     font-size: 18px;
     width: 32px;
@@ -126,7 +126,7 @@
 
 .add-btn {
     background: none;
-    color: #ff6b95;
+    color: #4e95b0;
     margin: 10px 0 20px;
     padding: 10px 20px;
     box-shadow: none;
@@ -160,7 +160,7 @@
 
 .date-input label, .time-input label {
     font-size: 14px;
-    color: #ff6b95;
+    color: #4e95b0;
     font-weight: 600;
 }
 
@@ -197,7 +197,7 @@
 }
 
 .flatpickr-months {
-    background: linear-gradient(45deg, #ff6b95, #ff8bb3);
+    background: linear-gradient(45deg, #4e95b0, #79aec2);
     padding: 5px 0;
     border-radius: 13px 13px 0 0;
 }
@@ -229,7 +229,7 @@
 
 ::-webkit-scrollbar-thumb,
 * ::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #ffb6c1, #ff8bb3);
+    background: linear-gradient(45deg, #a8cfdb, #79aec2);
     border-radius: 10px;
     border: 2px solid transparent;
     background-clip: padding-box;
@@ -238,7 +238,7 @@
 
 ::-webkit-scrollbar-thumb:hover,
 * ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(45deg, #ff6b95, #ffb6c1);
+    background: linear-gradient(45deg, #4e95b0, #a8cfdb);
     box-shadow: 0 0 8px rgba(255, 107, 149, 0.3);
 }
 
@@ -281,9 +281,9 @@ body:hover .scrollbar-decoration {
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    border: 2px solid #f5c7d6;
-    background: #ffe8f0;
-    color: #ff6b95;
+    border: 2px solid #b9dce3;
+    background: #eaf6f7;
+    color: #4e95b0;
     display: grid;
     place-items: center;
     /* box-shadow: 0 8px 18px rgba(255, 107, 149, 0.25); */
@@ -366,7 +366,7 @@ body:hover .scrollbar-decoration {
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.2px;
-    color: #ff4f85;
+    color: #3f839d;
     text-transform: uppercase;
     text-align: center;
 }
@@ -387,8 +387,8 @@ body:hover .scrollbar-decoration {
     gap: 8px;
     padding: 8px 10px;
     border-radius: 12px;
-    border: 1.5px solid #ff6b95;
-    background: #ff6b95;
+    border: 1.5px solid #4e95b0;
+    background: #4e95b0;
     color: #fff;
     font-weight: 700;
     letter-spacing: 0.2px;
@@ -408,8 +408,8 @@ body:hover .scrollbar-decoration {
 }
 
 .music-play-btn.is-playing {
-    background: #fff4f7;
-    color: #ff5c8f;
+    background: #f3fbfc;
+    color: #4b8fa9;
     border-color: rgba(255, 107, 149, 0.35);
     /* box-shadow: 0 10px 22px rgba(255, 107, 149, 0.18); */
 }
@@ -436,7 +436,7 @@ body:hover .scrollbar-decoration {
     height: 26px;
     border-radius: 50%;
     border: none;
-    background: #ff6b95;
+    background: #4e95b0;
     color: #fff;
     font-weight: 800;
     font-size: 14px;
@@ -456,7 +456,7 @@ body:hover .scrollbar-decoration {
     text-align: center;
     font-weight: 700;
     font-size: 13px;
-    color: #ff5c8f;
+    color: #4b8fa9;
     letter-spacing: 0.2px;
 }
 
@@ -524,12 +524,12 @@ body:hover .scrollbar-decoration {
 .custom-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    background-color: #fff9fa;
+    background-color: #f6fbfc;
 }
 
 .custom-btn.selected {
-    background-color: #ffe2e9;
-    border-color: #ff6b95;
+    background-color: #dceff3;
+    border-color: #4e95b0;
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 4px 12px rgba(255, 107, 149, 0.25);
     animation: selected-pulse 1.5s infinite;
@@ -543,7 +543,7 @@ body:hover .scrollbar-decoration {
     width: 20px;
     height: 20px;
     background: white;
-    color: #ff6b95;
+    color: #4e95b0;
     border-radius: 50%;
     font-size: 12px;
     font-weight: bold;
@@ -629,8 +629,8 @@ body:hover .scrollbar-decoration {
 }
 
 .tile-btn.selected {
-    border-color: #ff6b95;
-    box-shadow: 0 0 15px rgba(255, 107, 149, 0.5);
+    border-color: #4e95b0;
+    box-shadow: 0 0 15px rgba(78, 149, 176, 0.45);
 }
 
 .tile-btn.selected::after {
@@ -640,7 +640,7 @@ body:hover .scrollbar-decoration {
     right: 10px;
     width: 28px;
     height: 28px;
-    background: #ff6b95;
+    background: #4e95b0;
     color: white;
     border-radius: 50%;
     font-size: 16px;
@@ -650,6 +650,21 @@ body:hover .scrollbar-decoration {
     justify-content: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     animation: check-pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.recommended-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+    background: linear-gradient(45deg, #4e95b0, #79aec2);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    letter-spacing: 0.2px;
 }
 
 .custom-input-container {
@@ -755,7 +770,7 @@ body:hover .scrollbar-decoration {
 }
 
 #user-email:invalid:not(:placeholder-shown) {
-    border-color: #ff3366;
+    border-color: #3d87a3;
     animation: shake 0.3s;
 }
 
@@ -765,7 +780,7 @@ body:hover .scrollbar-decoration {
 }
 
 .email-error {
-    color: #ff3366;
+    color: #3d87a3;
     font-size: 14px;
     margin-top: 5px;
     display: none;
@@ -791,7 +806,7 @@ body:hover .scrollbar-decoration {
 }
 
 .location-counter {
-    background: linear-gradient(45deg, #ff6b95, #ff8bb3);
+    background: linear-gradient(45deg, #4e95b0, #79aec2);
     color: white;
     border-radius: 20px;
     padding: 5px 15px;
@@ -883,7 +898,7 @@ body:hover .scrollbar-decoration {
 
 .food-selection-status.active {
     background: rgba(255, 107, 149, 0.1);
-    color: #ff6b95;
+    color: #4e95b0;
     font-weight: 500;
 }
 
@@ -930,7 +945,7 @@ body:hover .scrollbar-decoration {
 .clear-data-btn {
     background: none;
     border: 2px solid rgba(255, 107, 149, 0.5);
-    color: #ff6b95;
+    color: #4e95b0;
     margin-top: 20px;
     font-size: 14px;
     padding: 10px 15px;
