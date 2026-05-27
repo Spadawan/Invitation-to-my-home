@@ -67,9 +67,9 @@
                     <span class="pause-text">Pause</span>
                 </button>
                 <div class="music-volume-group">
-                    <button class="volume-btn" id="music-volume-down" aria-label="Lower volume">-</button>
+                    <button class="volume-btn" id="music-volume-down" aria-label="Baisser le volume">-</button>
                     <span class="volume-value" id="music-volume-value">45%</span>
-                    <button class="volume-btn" id="music-volume-up" aria-label="Increase volume">+</button>
+                    <button class="volume-btn" id="music-volume-up" aria-label="Augmenter le volume">+</button>
                 </div>
             </div>
         </div>
@@ -257,7 +257,7 @@
                     </div>
                 </div>
                 <div class="next-step">
-                    <button id="choose-location-btn" class="btn yes-btn">Choisissons une activité ♥</button>
+                    <button id="choose-location-btn" class="btn yes-btn">Choisissons le moment ♥</button>
                 </div>
             </div>
         </div>
@@ -353,21 +353,25 @@
                     <p>Sélectionne tes envies de repas</p>
                 </div>
                 <div class="location-options">
-                    <button class="tile-btn" data-food="ramen">
-                        <img src="assets/images/food/ramen.jpg" alt="A bowl of Ramen">
-                        <span class="tile-label">Ramen</span>
+                    <button class="tile-btn" data-food="pates-bolognaise-vin-rouge">
+                        <img src="assets/images/food/pates-bolognaise-vin-rouge.jpg" onerror="this.onerror=null;this.src='assets/images/food/barbecue.jpg';" alt="Pâtes bolognaise au vin rouge">
+                        <span class="tile-label">Pâtes bolognaise au vin rouge</span>
                     </button>
-                    <button class="tile-btn" data-food="bun-bo">
-                        <img src="assets/images/food/bun-bo.jpg" alt="Bún Bò"/>
-                        <span class="tile-label">Bún Bò</span>
+                    <button class="tile-btn" data-food="risotto-petoncles-vin-blanc">
+                        <img src="assets/images/food/risotto-petoncles-vin-blanc.jpg" onerror="this.onerror=null;this.src='assets/images/food/bun-bo.jpg';" alt="Risotto aux pétoncles et vin blanc"/>
+                        <span class="tile-label">Risotto aux pétoncles et vin blanc</span>
                     </button>
-                    <button class="tile-btn" data-food="mi-cay">
-                        <img src="assets/images/food/steak.png" alt="A plate of Beefsteak"/>
-                        <span class="tile-label">Beefsteak</span>
+                    <button class="tile-btn" data-food="crepes-jambon">
+                        <img src="assets/images/food/crepes-jambon.jpg" onerror="this.onerror=null;this.src='assets/images/food/ramen.jpg';" alt="Crêpes au jambon"/>
+                        <span class="tile-label">Crêpes au jambon</span>
                     </button>
-                    <button class="tile-btn" data-food="barbecue">
-                        <img src="assets/images/food/barbecue.jpg" alt="Barbecue"/>
-                        <span class="tile-label">Barbecue</span>
+                    <button class="tile-btn" data-food="tagliatelles-poulet">
+                        <img src="assets/images/food/tagliatelles-poulet.jpg" onerror="this.onerror=null;this.src='assets/images/food/steak.png';" alt="Tagliatelles poulet"/>
+                        <span class="tile-label">Tagliatelles poulet</span>
+                    </button>
+                    <button class="tile-btn" data-food="khao-phat-kai">
+                        <img src="assets/images/food/khao-phat-kai.jpg" onerror="this.onerror=null;this.src='assets/images/food/ramen.jpg';" alt="Khao Phat Kai"/>
+                        <span class="tile-label">Khao Phat Kai</span>
                     </button>
                     <button class="custom-btn" data-food="custom">
                         <span class="custom-icon">✨</span>
@@ -380,55 +384,12 @@
                 <button id="confirm-food-btn" class="btn yes-btn" style="display: none;">Valider ♥</button>
 
                 <div class="final-message hidden" id="final-message">
-                    <p class="message">Choisissons aussi des boissons ! 🥤</p>
-                    <button id="drinks-next-btn" class="btn yes-btn" style="margin-top: 15px; display: inline-block;">Choisir des boissons ♥</button>
+                    <p class="message">Parfait, encore une petite note ? ✍️</p>
+                    <button id="note-next-btn" class="btn yes-btn" style="margin-top: 15px; display: inline-block;">Continuer ♥</button>
                 </div>
             </div>
         </div>
         
-        <!-- Drinks -->
-        <div class="card hidden" id="drinks-card">
-            <div class="hearts-celebration" id="drinks-celebration"></div>
-            <div class="card-content">
-                <h1>Choisis une <span class="special-text">boisson</span>...</h1>
-                <div class="sakura-divider"></div>
-                <p class="question">Qu'est-ce que tu aimerais boire ?</p>
-                <div class="selection-status" id="drink-selection-status">
-                    <p>Sélectionne tes envies de boisson</p>
-                </div>
-                <div class="location-options">
-                    <button class="tile-btn" data-drink="coffee">
-                        <img src="assets/images/drinks/coffee.jfif" alt="Coffee">
-                        <span class="tile-label">Coffee</span>
-                    </button>
-                    <button class="tile-btn" data-drink="tea">
-                        <img src="assets/images/drinks/tea.jpg" alt="Tea">
-                        <span class="tile-label">Tea</span>
-                    </button>
-                    <button class="tile-btn" data-drink="boba">
-                        <img src="assets/images/drinks/boba.jpg" alt="Boba Tea">
-                        <span class="tile-label">Boba Tea</span>
-                    </button>
-                    <button class="tile-btn" data-drink="smoothie">
-                        <img src="assets/images/drinks/smoothie.jpg" alt="Smoothie">
-                        <span class="tile-label">Smoothie</span>
-                    </button>
-                    <button class="custom-btn" data-drink="custom">
-                        <span class="custom-icon">✨</span>
-                        <span><strong>Autre chose</strong></span>
-                    </button>
-                </div>
-                <div class="selected-location-message hidden" id="selected-drink-message">
-                    <p class="message">Ça a l'air rafraîchissant ! 🥰</p>
-                </div>
-                <button id="confirm-drink-btn" class="btn yes-btn" style="display: none;">Valider ♥</button>
-
-                <div class="final-message hidden" id="final-drink-message">
-                    <button id="completion-next-btn" class="btn yes-btn" style="margin-top: 15px; display: inline-block;">Terminer ! ♥</button>
-                </div>
-            </div>
-        </div>
-
         <!-- Leave a note -->
         <div class="card hidden" id="note-card">
             <div class="hearts-celebration" id="note-celebration"></div>
@@ -458,16 +419,16 @@
                 <p class="message">Je ferai de mon mieux pour te recevoir chaleureusement.</p>
 
                 <div class="email-container" id="email-container">
-                    <p class="email-label">Tu veux un rappel ? (optionnel)</p>
+                    <p class="email-label">Ton e-mail (pour que je puisse te recontacter)</p>
                     <form id="email-form" class="email-form">
                         <input 
                             type="email" 
                             id="user-email" 
-                            placeholder="Entre ton e-mail" 
+                            placeholder="Ton e-mail" 
                             pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                             title="Merci d'entrer une adresse e-mail valide" 
                         />
-                        <button type="submit" id="send-email-btn" class="btn yes-btn">Envoyer l'invitation</button>
+                        <button type="submit" id="send-email-btn" class="btn yes-btn">Envoyer ma participation</button>
                     </form>
                     <p id="email-error" class="email-error">Merci d'entrer une adresse e-mail valide</p>
                     <div id="email-success" class="email-success">
@@ -481,7 +442,7 @@
     </div>
 
     <audio id="bg-music" loop preload="auto">
-        <source src="assets/music/Perfect_Ed-Sheeran.mp3" type="audio/mpeg">
+        <source src="assets/music/HollowCoves.mp3" type="audio/mpeg">
     </audio>
 
     <script type="module" src="src/js/main.js"></script>

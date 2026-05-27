@@ -24,7 +24,7 @@ const formatSelection = (items) => {
     const cleaned = items
         .map(item => item.replace(/^custom:\s*/i, '').replace(/\s+/g, ' ').trim())
         .filter(Boolean);
-    return cleaned.length ? cleaned.join(', ') : 'None selected';
+    return cleaned.length ? cleaned.join(', ') : 'Aucune sélection';
 };
 
 export { appState, selection, syncSelections, formatSelection };
