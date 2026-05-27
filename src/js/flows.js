@@ -113,7 +113,7 @@ const setupYesNoFlow = (els) => {
         "Vraiment ?", "Tu es sûr(e) ?", "Réfléchis encore !", "Dernière chance...",
         "Je crois que tu as cliqué au mauvais endroit", "Allez...", "Tu voulais dire oui ?", "On réessaie ?",
         "Le bouton oui est juste là 😇", "Tu changes d'avis ?",
-        "Encore une petite chance !", "Pourquoi pas ?", "En mode amitié, le non n'est pas accepté 😎",
+        "Encore une petite chance !", "Pourquoi pas ?", "En amitié, le non n'est pas accepté 😎",
         "Non = Oui, Oui = Oui", "Je pense que tu voulais dire oui", "Allez, dis oui ✨"
     ];
 
