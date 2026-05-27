@@ -13,10 +13,10 @@
     display: block;
     background: linear-gradient(45deg, #eaf6f7, #f3fbfc);
     border-radius: 30px;
-    box-shadow: inset 0px 3px 8px rgba(255, 107, 149, 0.2), 0 3px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0px 3px 8px rgba(78, 149, 176, 0.2), 0 3px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: 0.3s;
-    border: 2px solid rgba(255, 182, 193, 0.5);
+    border: 2px solid rgba(121, 174, 194, 0.5);
     box-sizing: border-box;
 }
 

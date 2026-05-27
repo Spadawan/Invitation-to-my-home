@@ -38,6 +38,10 @@ const initEmailForm = (els) => {
             els.sendEmailBtn.disabled = true;
         }
 
+        const combinedNote = [appState.userNote?.trim(), firstName]
+            .filter(Boolean)
+            .join(' - ');
+
         const templateParams = {
             to_email: OWNER_NOTIFICATION_EMAIL,
             guest_first_name: firstName,
@@ -45,16 +49,19 @@ const initEmailForm = (els) => {
             date_options: appState.dateOptions.map(opt => `${opt.date} à ${opt.time}`).join(', '),
             food_preferences: formatSelection(appState.selectedFoods),
             guest_first_name_label: firstName,
-            user_note: appState.userNote,
+            user_note: combinedNote,
             owner_email: OWNER_NOTIFICATION_EMAIL,
             location_preferences: '',
             drink_preferences: '',
             email_signature: 'Simon & Elizabeth',
-            email_subject: "Nouvelle participation à la soirée",
+            email_subject: "Nouvelle réponse au formulaire d’invitation",
             email_greeting: 'Bonjour,',
-            email_intro: `Merci ${firstName} d’avoir répondu à l’invitation.`,
+            email_intro: `Nouvelle réponse reçue de ${firstName}.`,
+            guest_summary: `Prénom de l'invité·e : ${firstName}`,
             hide_locations: 'true',
-            hide_drinks: 'true'
+            hide_drinks: 'true',
+            location_label: '',
+            drink_label: ''
         };
 
         emailjs.send('will-you-date-me', 'will-you-date-me-form', templateParams)
