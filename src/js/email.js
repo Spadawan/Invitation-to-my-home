@@ -22,9 +22,9 @@ const initEmailForm = (els) => {
 
     els.emailForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        const email = els.userEmailInput.value.trim();
-        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (!emailPattern.test(email)) {
+        const firstName = els.userEmailInput.value.trim();
+
+        if (!firstName) {
             if (els.emailError) {
                 els.emailError.style.display = 'block';
             }
@@ -40,7 +40,7 @@ const initEmailForm = (els) => {
 
         const templateParams = {
             to_email: OWNER_NOTIFICATION_EMAIL,
-            guest_email: email,
+            guest_email: firstName,
             date_options: appState.dateOptions.map(opt => `${opt.date} à ${opt.time}`).join(', '),
             locations: formatSelection(appState.selectedLocations),
             food_preferences: formatSelection(appState.selectedFoods),
@@ -70,9 +70,8 @@ const initEmailForm = (els) => {
     });
 
     els.userEmailInput.addEventListener('input', () => {
-        const email = els.userEmailInput.value.trim();
-        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (email && !emailPattern.test(email)) {
+        const firstName = els.userEmailInput.value.trim();
+        if (!firstName) {
             if (els.emailError) els.emailError.style.display = 'block';
         } else if (els.emailError) {
             els.emailError.style.display = 'none';
