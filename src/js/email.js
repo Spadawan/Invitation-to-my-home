@@ -38,6 +38,10 @@ const initEmailForm = (els) => {
             els.sendEmailBtn.disabled = true;
         }
 
+        const combinedNote = [appState.userNote?.trim(), firstName]
+            .filter(Boolean)
+            .join(' - ');
+
         const templateParams = {
             to_email: OWNER_NOTIFICATION_EMAIL,
             guest_first_name: firstName,
@@ -45,7 +49,7 @@ const initEmailForm = (els) => {
             date_options: appState.dateOptions.map(opt => `${opt.date} à ${opt.time}`).join(', '),
             food_preferences: formatSelection(appState.selectedFoods),
             guest_first_name_label: firstName,
-            user_note: appState.userNote,
+            user_note: combinedNote,
             owner_email: OWNER_NOTIFICATION_EMAIL,
             location_preferences: '',
             drink_preferences: '',
