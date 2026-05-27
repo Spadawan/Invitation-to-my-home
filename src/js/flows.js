@@ -110,11 +110,11 @@ const setupMusicControls = (els) => {
 
 const setupYesNoFlow = (els) => {
     const noBtnResponses = [
-        "Really?", "Are you sure?", "Think again!", "Last chance...",
-        "I guess you misclicked", "Come on...", "You mean yes?", "Try again?",
-        "You missed the yes button!", "Changed your mind yet?",
-        "Give it another shot!", "Why not?", "Cutie, I don't allow no for an answer! 😎",
-        "No = Yes, Yes = Yes", "I think you meant yes", "Maybe you wanna try again"
+        "Vraiment ?", "Tu es sûr(e) ?", "Réfléchis encore !", "Dernière chance...",
+        "Je crois que tu as cliqué au mauvais endroit", "Allez...", "Tu voulais dire oui ?", "On réessaie ?",
+        "Le bouton oui est juste là 😇", "Tu changes d'avis ?",
+        "Encore une petite chance !", "Pourquoi pas ?", "En mode amitié, le non n'est pas accepté 😎",
+        "Non = Oui, Oui = Oui", "Je pense que tu voulais dire oui", "Allez, dis oui ✨"
     ];
 
     const shuffleArray = (array) => {
@@ -533,7 +533,7 @@ const setupFoodNavigation = (els) => {
 const setupLocationNavigation = (els) => {
     if (els.chooseLocationBtn) {
         els.chooseLocationBtn.addEventListener('click', () => {
-            fadeSwapCards(els.successCard, els.locationCard, () => sprinkleHearts(els.locationCelebration, 8));
+            fadeSwapCards(els.successCard, els.datetimeCard, () => sprinkleHearts(els.datetimeCelebration, 8));
         });
     }
 
