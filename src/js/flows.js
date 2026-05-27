@@ -113,7 +113,7 @@ const setupYesNoFlow = (els) => {
         "Vraiment ?", "Tu es sûr(e) ?", "Réfléchis encore !", "Dernière chance...",
         "Je crois que tu as cliqué au mauvais endroit", "Allez...", "Tu voulais dire oui ?", "On réessaie ?",
         "Le bouton oui est juste là 😇", "Tu changes d'avis ?",
-        "Encore une petite chance !", "Pourquoi pas ?", "En amitié, le non n'est pas accepté 😎",
+        "Encore une petite chance !", "Pourquoi pas ?", "En mode amitié, le non n'est pas accepté 😎",
         "Non = Oui, Oui = Oui", "Je pense que tu voulais dire oui", "Allez, dis oui ✨"
     ];
 
@@ -278,7 +278,7 @@ const updateSelectionUI = (type, els) => {
         if (confirmEl) confirmEl.style.display = 'none';
     }
 
-    if (type === 'food' || type === 'drink') {
+    if (type === 'food') {
         const statusEl = statusMap[type];
         if (statusEl) {
             if (!selected.length) {
@@ -567,46 +567,9 @@ const setupFoodFlow = (els) => {
         });
     }
 
-    if (els.drinksNextBtn) {
-        els.drinksNextBtn.addEventListener('click', () => {
-            fadeSwapCards(els.foodCard, els.drinksCard, () => sprinkleHearts(els.drinksCelebration, 8));
-        });
-    }
-};
-
-const setupDrinkFlow = (els, onNoteStep) => {
-    if (els.confirmDrinkBtn) {
-        els.confirmDrinkBtn.addEventListener('click', () => {
-            if (!hasSelectionForType('drink')) return;
-            syncSelections();
-            els.confirmDrinkBtn.style.display = 'none';
-            els.finalDrinkMessage?.classList.remove('hidden');
-            setTimeout(() => els.finalDrinkMessage?.classList.add('show'), 50);
-            for (let i = 0; i < 30; i++) {
-                setTimeout(() => createHeart(els.drinksCelebration, {
-                    left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
-                    lifetime: 1000,
-                    scale: Math.random() * 0.5 + 0.5,
-                    opacity: Math.random() * 0.5 + 0.5
-                }), i * 100);
-            }
-            document.querySelectorAll('.tile-btn[data-drink], .custom-btn[data-drink]').forEach(btn => {
-                btn.disabled = true;
-                btn.style.opacity = '0.7';
-                btn.style.cursor = 'default';
-            });
-            if (els.completionNextBtn) {
-                els.completionNextBtn.style.display = 'inline-block';
-                els.completionNextBtn.textContent = 'Continuer ♥';
-            }
-        });
-    }
-
-    if (els.completionNextBtn) {
-        els.completionNextBtn.addEventListener('click', () => {
-            fadeSwapCards(els.drinksCard, els.noteCard, () => sprinkleHearts(els.noteCelebration, 8));
-            onNoteStep?.();
+    if (els.noteNextBtn) {
+        els.noteNextBtn.addEventListener('click', () => {
+            fadeSwapCards(els.foodCard, els.noteCard, () => sprinkleHearts(els.noteCelebration, 8));
         });
     }
 };
@@ -676,7 +639,6 @@ const initFlows = (els, { tileButtons, customButtons }, onCompletionReady) => {
     setupDatetimeFlow(els);
     setupFoodNavigation(els);
     setupFoodFlow(els);
-    setupDrinkFlow(els, () => enforceNoteLimits(els));
     setupNoteFlow(els, onCompletionReady);
 };
 

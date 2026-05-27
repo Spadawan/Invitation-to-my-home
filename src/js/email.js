@@ -8,6 +8,8 @@ const disableForm = (els) => {
     if (els.sendEmailBtn) els.sendEmailBtn.disabled = true;
 };
 
+const OWNER_NOTIFICATION_EMAIL = 'simon.paindavoine@gmail.com';
+
 const initEmailForm = (els) => {
     if (!els.emailForm || !els.userEmailInput) return;
 
@@ -37,11 +39,11 @@ const initEmailForm = (els) => {
         }
 
         const templateParams = {
-            to_email: email,
+            to_email: OWNER_NOTIFICATION_EMAIL,
+            guest_email: email,
             date_options: appState.dateOptions.map(opt => `${opt.date} à ${opt.time}`).join(', '),
             locations: formatSelection(appState.selectedLocations),
             food_preferences: formatSelection(appState.selectedFoods),
-            drink_preferences: formatSelection(appState.selectedDrinks),
             user_note: appState.userNote
         };
 
