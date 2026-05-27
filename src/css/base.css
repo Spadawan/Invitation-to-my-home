@@ -1,32 +1,32 @@
 :root {
     --font-family: 'Quicksand', sans-serif;
-    --bg-color: #f8e9ec;
-    --bg-gradient: linear-gradient(45deg, #f8e9ec 0%, #ffdee5 100%);
-    --text-color: #555;
+    --bg-color: #eaf6f7;
+    --bg-gradient: linear-gradient(45deg, #eaf6f7 0%, #d9edf1 100%);
+    --text-color: #3d4b57;
     --card-bg: #ffffff;
-    --card-border: rgba(255, 182, 193, 0.3);
-    --card-shadow: 0 15px 35px rgba(255, 138, 188, 0.2);
-    --heading-color: #ff6b95;
-    --special-color: #ff4d88;
-    --message-color: #ff6b95;
-    --divider-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="10" viewBox="0 0 100 10"><path d="M 0,5 C 20,-5 30,15 50,5 C 70,-5 80,15 100,5" stroke="%23ffb6c1" stroke-width="2" fill="none" /></svg>') repeat-x;
-    --blossom-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20 0C18 10 10 18 0 20C10 22 18 30 20 40C22 30 30 22 40 20C30 18 22 10 20 0Z" fill="%23ffb6c1" opacity="0.7"/></svg>');
-    --star-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff6b95"><path d="M12 2.5l2.95 5.98 6.6.96-4.77 4.65 1.13 6.57L12 17.55l-5.91 3.11 1.13-6.57-4.77-4.65 6.6-.96L12 2.5z"/></svg>');
+    --card-border: rgba(129, 180, 199, 0.28);
+    --card-shadow: 0 15px 35px rgba(78, 149, 176, 0.2);
+    --heading-color: #4e95b0;
+    --special-color: #3d87a3;
+    --message-color: #4e95b0;
+    --divider-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="10" viewBox="0 0 100 10"><path d="M 0,5 C 20,-5 30,15 50,5 C 70,-5 80,15 100,5" stroke="%23b9dce3" stroke-width="2" fill="none" /></svg>') repeat-x;
+    --blossom-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20 0C18 10 10 18 0 20C10 22 18 30 20 40C22 30 30 22 40 20C30 18 22 10 20 0Z" fill="%23b9dce3" opacity="0.7"/></svg>');
+    --star-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234e95b0"><path d="M12 2.5l2.95 5.98 6.6.96-4.77 4.65 1.13 6.57L12 17.55l-5.91 3.11 1.13-6.57-4.77-4.65 6.6-.96L12 2.5z"/></svg>');
 }
 
 body.dark-mode {
-    --bg-color: #2d2123;
-    --bg-gradient: linear-gradient(45deg, #2d2123 0%, #20181a 100%);
+    --bg-color: #1d2a30;
+    --bg-gradient: linear-gradient(45deg, #1d2a30 0%, #162128 100%);
     --text-color: #d0d0d0;
     --card-bg: #121212;
-    --card-border: rgba(255, 107, 149, 0.3);
-    --card-shadow: 0 15px 35px rgba(255, 107, 149, 0.15);
-    --heading-color: #ff8bb3;
-    --special-color: #ff8bb3;
-    --message-color: #ff8bb3;
-    --divider-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="10" viewBox="0 0 100 10"><path d="M 0,5 C 20,-5 30,15 50,5 C 70,-5 80,15 100,5" stroke="%23ff8bb3" stroke-width="2" fill="none" /></svg>') repeat-x;
-    --blossom-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20 0C18 10 10 18 0 20C10 22 18 30 20 40C22 30 30 22 40 20C30 18 22 10 20 0Z" fill="%23ff8bb3" opacity="0.7"/></svg>');
-    --star-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff8bb3"><path d="M12 2.5l2.95 5.98 6.6.96-4.77 4.65 1.13 6.57L12 17.55l-5.91 3.11 1.13-6.57-4.77-4.65 6.6-.96L12 2.5z"/></svg>');
+    --card-border: rgba(78, 149, 176, 0.28);
+    --card-shadow: 0 15px 35px rgba(121, 174, 194, 0.16);
+    --heading-color: #79aec2;
+    --special-color: #79aec2;
+    --message-color: #79aec2;
+    --divider-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="10" viewBox="0 0 100 10"><path d="M 0,5 C 20,-5 30,15 50,5 C 70,-5 80,15 100,5" stroke="%2379aec2" stroke-width="2" fill="none" /></svg>') repeat-x;
+    --blossom-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20 0C18 10 10 18 0 20C10 22 18 30 20 40C22 30 30 22 40 20C30 18 22 10 20 0Z" fill="%2379aec2" opacity="0.7"/></svg>');
+    --star-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2379aec2"><path d="M12 2.5l2.95 5.98 6.6.96-4.77 4.65 1.13 6.57L12 17.55l-5.91 3.11 1.13-6.57-4.77-4.65 6.6-.96L12 2.5z"/></svg>');
 }
 
 * {
@@ -78,7 +78,7 @@ body {
     left: 0;
     right: 0;
     height: 6px;
-    background: linear-gradient(90deg, #ffb6c1, #ffc8dd, #ffb6c1);
+    background: linear-gradient(90deg, #b9dce3, #d8edf1, #b9dce3);
     border-radius: 5px 5px 0 0;
 }
 
@@ -92,7 +92,7 @@ h1 {
     margin-bottom: 15px;
     font-weight: 700;
     font-size: 2.2rem;
-    text-shadow: 1px 1px 2px rgba(255, 107, 149, 0.1);
+    text-shadow: 1px 1px 2px rgba(78, 149, 176, 0.14);
 }
 
 .special-text {
@@ -108,18 +108,18 @@ h1 {
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, #ffc8dd, #ff6b95);
+    background: linear-gradient(90deg, #d8edf1, #4e95b0);
     border-radius: 2px;
 }
 
 .gorgeous {
-    background: linear-gradient(45deg, #ff6b95, #ff8bb3, #ff6b95);
+    background: linear-gradient(45deg, #4e95b0, #79aec2, #4e95b0);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     animation: shimmer 2s linear infinite;
-    text-shadow: 0 0 5px rgba(255, 107, 149, 0.3);
+    text-shadow: 0 0 5px rgba(78, 149, 176, 0.28);
     letter-spacing: 0.5px;
 }
 

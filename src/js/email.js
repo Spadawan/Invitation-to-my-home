@@ -41,11 +41,15 @@ const initEmailForm = (els) => {
         const templateParams = {
             to_email: OWNER_NOTIFICATION_EMAIL,
             guest_first_name: firstName,
-            guest_email: firstName,
+            guest_name: firstName,
             date_options: appState.dateOptions.map(opt => `${opt.date} à ${opt.time}`).join(', '),
             food_preferences: formatSelection(appState.selectedFoods),
+            guest_first_name_label: firstName,
             user_note: appState.userNote,
             owner_email: OWNER_NOTIFICATION_EMAIL,
+            location_preferences: '',
+            drink_preferences: '',
+            email_signature: 'Simon & Elizabeth',
             email_subject: "Nouvelle participation à la soirée"
         };
 
