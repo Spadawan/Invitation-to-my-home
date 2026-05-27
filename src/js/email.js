@@ -32,13 +32,13 @@ const initEmailForm = (els) => {
 
         if (els.emailError) els.emailError.style.display = 'none';
         if (els.sendEmailBtn) {
-            els.sendEmailBtn.textContent = 'Sending...';
+            els.sendEmailBtn.textContent = 'Envoi...';
             els.sendEmailBtn.disabled = true;
         }
 
         const templateParams = {
             to_email: email,
-            date_options: appState.dateOptions.map(opt => `${opt.date} at ${opt.time}`).join(', '),
+            date_options: appState.dateOptions.map(opt => `${opt.date} à ${opt.time}`).join(', '),
             locations: formatSelection(appState.selectedLocations),
             food_preferences: formatSelection(appState.selectedFoods),
             drink_preferences: formatSelection(appState.selectedDrinks),
@@ -47,7 +47,7 @@ const initEmailForm = (els) => {
 
         emailjs.send('will-you-date-me', 'will-you-date-me-form', templateParams)
             .then(() => {
-                if (els.sendEmailBtn) els.sendEmailBtn.textContent = 'Send Invitation';
+                if (els.sendEmailBtn) els.sendEmailBtn.textContent = "Envoyer l'invitation";
                 if (els.sendEmailBtn) els.sendEmailBtn.disabled = false;
                 if (els.emailSuccess) els.emailSuccess.style.display = 'block';
                 appState.invitationEmailSent = true;
@@ -55,11 +55,11 @@ const initEmailForm = (els) => {
             })
             .catch(() => {
                 if (els.sendEmailBtn) {
-                    els.sendEmailBtn.textContent = 'Try Again';
+                    els.sendEmailBtn.textContent = 'Réessayer';
                     els.sendEmailBtn.disabled = false;
                 }
                 if (els.emailError) {
-                    els.emailError.textContent = 'Failed to send invitation. Please try again.';
+                    els.emailError.textContent = "Échec de l'envoi de l'invitation. Merci de réessayer.";
                     els.emailError.style.display = 'block';
                 }
             });

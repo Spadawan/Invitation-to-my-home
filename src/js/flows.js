@@ -283,10 +283,10 @@ const updateSelectionUI = (type, els) => {
         if (statusEl) {
             if (!selected.length) {
                 statusEl.classList.remove('active');
-                statusEl.innerHTML = '<p>Select your preferences</p>';
+                statusEl.innerHTML = '<p>Sélectionne tes préférences</p>';
             } else {
                 statusEl.classList.add('active');
-                statusEl.innerHTML = `<p>${selected.length} option${selected.length > 1 ? 's' : ''} selected</p>`;
+                statusEl.innerHTML = `<p>${selected.length} option${selected.length > 1 ? 's' : ''} sélectionnée${selected.length > 1 ? 's' : ''}</p>`;
             }
         }
     }
@@ -297,8 +297,8 @@ const buildCustomInput = (buttonType, parentCard) => {
     inputContainer.id = `${buttonType}-custom-input`;
     inputContainer.className = 'custom-input-container';
     inputContainer.innerHTML = `
-        <input type="text" class="custom-text-input" placeholder="Enter your custom ${buttonType} (max 10 words)" maxlength="70">
-        <div class="word-counter">0/10 words</div>
+        <input type="text" class="custom-text-input" placeholder="Entre ton choix personnalisé ${buttonType} (max 10 mots)" maxlength="70">
+        <div class="word-counter">0/10 mots</div>
     `;
     const confirmBtn = parentCard.querySelector(`#confirm-${buttonType}-btn`);
     if (confirmBtn) {
@@ -316,10 +316,10 @@ const handleCustomInput = (buttonType, inputContainer) => {
     input.addEventListener('input', () => {
         const words = input.value.trim().split(/\s+/).filter(Boolean);
         const wordCount = words.length;
-        if (counter) counter.textContent = `${wordCount}/10 words`;
+        if (counter) counter.textContent = `${wordCount}/10 mots`;
         if (wordCount > 10) {
             input.value = words.slice(0, 10).join(' ');
-            if (counter) counter.textContent = '10/10 words';
+            if (counter) counter.textContent = '10/10 mots';
         }
 
         const typed = input.value.trim();
@@ -598,7 +598,7 @@ const setupDrinkFlow = (els, onNoteStep) => {
             });
             if (els.completionNextBtn) {
                 els.completionNextBtn.style.display = 'inline-block';
-                els.completionNextBtn.textContent = 'Continue ♥';
+                els.completionNextBtn.textContent = 'Continuer ♥';
             }
         });
     }
@@ -616,10 +616,10 @@ const enforceNoteLimits = (els) => {
         els.noteTextarea.addEventListener('input', () => {
             const words = els.noteTextarea.value.trim().split(/\s+/).filter(Boolean);
             const wordCount = words.length;
-            els.noteWordCounter.textContent = `${wordCount}/150 words`;
+            els.noteWordCounter.textContent = `${wordCount}/150 mots`;
             if (wordCount > 150) {
                 els.noteTextarea.value = words.slice(0, 150).join(' ');
-                els.noteWordCounter.textContent = '150/150 words';
+                els.noteWordCounter.textContent = '150/150 mots';
             }
         });
     }
