@@ -489,7 +489,7 @@ const setupDatetimeFlow = (els) => {
                     ['date-picker', 'time-picker'].forEach(cls => {
                         const input = row.querySelector(`.${cls}`);
                         if (!input.value) {
-                            input.style.borderColor = '#ff3366';
+                            input.style.borderColor = '#3d87a3';
                             setTimeout(() => {
                                 input.style.borderColor = '';
                             }, 1000);

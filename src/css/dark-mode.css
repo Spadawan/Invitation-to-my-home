@@ -1,5 +1,5 @@
 .dark-mode .gorgeous {
-    background: linear-gradient(45deg, #ff8bb3, #ffacc7, #ff8bb3);
+    background: linear-gradient(45deg, #79aec2, #ffacc7, #79aec2);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -7,7 +7,7 @@
 }
 
 .dark-mode .cat-svg g {
-    fill: #ff8bb3;
+    fill: #79aec2;
 }
 
 .dark-mode .next-step p {
@@ -16,7 +16,7 @@
 
 .dark-mode .date-input label,
 .dark-mode .time-input label {
-    color: #ff8bb3;
+    color: #79aec2;
 }
 
 .dark-mode .date-input input,
@@ -27,7 +27,7 @@
 }
 
 .dark-mode .btn-icon {
-    color: #ff8bb3;
+    color: #79aec2;
 }
 
 .dark-mode .btn-icon:hover {
@@ -35,7 +35,7 @@
 }
 
 .dark-mode .add-btn {
-    color: #ff8bb3;
+    color: #79aec2;
 }
 
 .dark-mode .add-btn:hover {
@@ -44,12 +44,12 @@
 
 .dark-mode ::-webkit-scrollbar-thumb,
 .dark-mode * ::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #ff8bb3, #ff6b95);
+    background: linear-gradient(45deg, #79aec2, #4e95b0);
 }
 
 .dark-mode ::-webkit-scrollbar-thumb:hover,
 .dark-mode * ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(45deg, #ff6b95, #ff8bb3);
+    background: linear-gradient(45deg, #4e95b0, #79aec2);
     box-shadow: 0 0 12px rgba(255, 139, 179, 0.5);
 }
 
@@ -62,7 +62,7 @@
 }
 
 .dark-mode .clear-data-btn {
-    color: #ff8bb3;
+    color: #79aec2;
     border-color: rgba(255, 139, 179, 0.5);
 }
 
@@ -88,7 +88,7 @@
 
 .dark-mode .custom-btn.selected {
     background-color: #3c2a33;
-    border-color: #ff6b95;
+    border-color: #4e95b0;
     box-shadow: 0 4px 12px rgba(255, 107, 149, 0.15);
     animation: selected-pulse-dark 1.5s infinite;
 }
@@ -130,7 +130,7 @@
 
 .dark-mode .food-selection-status.active {
     background: rgba(255, 139, 179, 0.15);
-    color: #ff8bb3;
+    color: #79aec2;
 }
 
 .dark-mode .drink-selection-status.active {
@@ -139,7 +139,7 @@
 }
 
 .dark-mode .tile-btn.selected {
-    border-color: #ff8bb3;
+    border-color: #79aec2;
     box-shadow: 0 0 15px rgba(255, 139, 179, 0.5);
 }
 

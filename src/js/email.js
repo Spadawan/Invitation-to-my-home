@@ -50,7 +50,11 @@ const initEmailForm = (els) => {
             location_preferences: '',
             drink_preferences: '',
             email_signature: 'Simon & Elizabeth',
-            email_subject: "Nouvelle participation à la soirée"
+            email_subject: "Nouvelle participation à la soirée",
+            email_greeting: 'Bonjour,',
+            email_intro: `Merci ${firstName} d’avoir répondu à l’invitation.`,
+            hide_locations: 'true',
+            hide_drinks: 'true'
         };
 
         emailjs.send('will-you-date-me', 'will-you-date-me-form', templateParams)
