@@ -8,7 +8,7 @@ const disableForm = (els) => {
     if (els.sendEmailBtn) els.sendEmailBtn.disabled = true;
 };
 
-const OWNER_NOTIFICATION_EMAIL = 'simon.paindavoine@gmail.com';
+const OWNER_NOTIFICATION_EMAIL = 'simon.paindavoine@gmail.com'; // Adresse qui reçoit la participation
 
 const initEmailForm = (els) => {
     if (!els.emailForm || !els.userEmailInput) return;
@@ -44,7 +44,9 @@ const initEmailForm = (els) => {
             date_options: appState.dateOptions.map(opt => `${opt.date} à ${opt.time}`).join(', '),
             locations: formatSelection(appState.selectedLocations),
             food_preferences: formatSelection(appState.selectedFoods),
-            user_note: appState.userNote
+            user_note: appState.userNote,
+            owner_email: OWNER_NOTIFICATION_EMAIL,
+            email_subject: "Nouvelle participation à l'invitation"
         };
 
         emailjs.send('will-you-date-me', 'will-you-date-me-form', templateParams)
