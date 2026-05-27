@@ -23,7 +23,7 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    background: var(--heart-icon) no-repeat;
+    background: var(--star-icon) no-repeat;
     background-size: contain;
     opacity: 0;
     animation: float 6s ease-in-out infinite;
@@ -63,7 +63,7 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    background: var(--heart-icon) no-repeat;
+    background: var(--star-icon) no-repeat;
     background-size: contain;
     opacity: 0.8;
     animation: catHeartFloat 4s ease-in-out infinite;
@@ -148,7 +148,7 @@
     position: absolute;
     width: 18px;
     height: 18px;
-    background: var(--heart-icon) no-repeat;
+    background: var(--star-icon) no-repeat;
     background-size: contain;
     opacity: 0.8;
     animation: floatHeartUp 4s ease-in-out infinite;

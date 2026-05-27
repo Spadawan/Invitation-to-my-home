@@ -475,7 +475,7 @@ body:hover .scrollbar-decoration {
     position: absolute;
     width: 12px;
     height: 12px;
-    background: var(--heart-icon) no-repeat;
+    background: var(--star-icon) no-repeat;
     background-size: contain;
     animation: floatScrollbarHeart 3s ease-in-out infinite;
 }
@@ -836,7 +836,7 @@ body:hover .scrollbar-decoration {
     animation: buttonShine 2s infinite;
 }
 
-.heart-trail-container {
+.star-trail-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -847,12 +847,12 @@ body:hover .scrollbar-decoration {
     z-index: 9999;
 }
 
-.cursor-heart {
+.cursor-star {
     position: fixed;
     width: 15px;
     height: 15px;
     pointer-events: none;
-    background: var(--heart-icon) no-repeat;
+    background: var(--star-icon) no-repeat;
     background-size: contain;
     animation: floatUp 1.5s ease-out forwards;
     opacity: 0.8;
